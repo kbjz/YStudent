@@ -1,0 +1,10 @@
+framework module SwiftHEXColors {
+  umbrella header "SwiftHEXColors.h"
+
+  export *
+  module * { export * }
+}
+
+module SwiftHEXColors.Swift {
+    header "SwiftHEXColors-Swift.h"
+}
