@@ -24,7 +24,7 @@ enum SocialNetwork {
     case viadeo
     case twitter
 }
-class Student: Object {
+class Student {
     
     var lastName : String
     var firstName : String
@@ -66,7 +66,6 @@ class Student: Object {
         self.skill = ["What","Ever"]
         self.socialAdresses = [SocialNetwork.linkedIn:"whatever.com"]
         self.course = CourseType.alternance
-        super.init()
     }
     
     // TO DO OPTIONNAL
@@ -89,18 +88,8 @@ class Student: Object {
         self.skill = skill
         self.socialAdresses = social
         self.course = course
-        super.init()
-        
     }
-    
-    required init(realm: RLMRealm, schema: RLMObjectSchema) {
-        fatalError("init(realm:schema:) has not been implemented")
-    }
-    
-    required init(value: Any, schema: RLMSchema) {
-        fatalError("init(value:schema:) has not been implemented")
-    }
-    
+
     
     
 }
