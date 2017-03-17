@@ -8,6 +8,7 @@
 import UIKit
 import QuartzCore
 import SwiftHEXColors
+import IQKeyboardManagerSwift
 
 enum State {
     case Campus
@@ -17,7 +18,7 @@ enum State {
 }
 
 
-class AddEventController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+class AddEventController: ViewControllerWithLongTap ,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = UIColor.ynovGreen
@@ -51,6 +52,7 @@ class AddEventController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.initializeTableView()
         self.initializeDatePicker()
         self.initializeDurationPicker()
+        IQKeyboardManager.sharedManager().enable = true
         if self.eventState == .toModify {
             if let e = EventManager.sharedInstance.selectedEvent {
                 self.handleModifying(event:e)
@@ -441,6 +443,19 @@ extension AddEventController:UIPickerViewDataSource,UIPickerViewDelegate  {
     }
 }
 
+extension String {
+     func toDate() -> Date {
+        //formatting date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        if let d = dateFormatter.date(from: self) {
+            return d
+        }
+        return Date()
+    }
+  
 
+
+}
 
 

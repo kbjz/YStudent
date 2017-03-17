@@ -2,3 +2,5 @@ github "thii/SwiftHEXColors"
 github "raulriera/TextFieldEffects"
 github "Ramotion/folding-cell"
 github "realm/realm-cocoa"
+github "scalessec/Toast-Swift" ~> 2.0.0
+github "hackiftekhar/IQKeyboardManager"

@@ -9,9 +9,10 @@
 import UIKit
 import ChameleonFramework
 
-class StudentListController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class StudentListController: ViewControllerWithLongTap,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var studentsTableView: UITableView!
+    let model = StudentManager.sharedInstance
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = UIColor.ynovGreen
@@ -22,19 +23,6 @@ class StudentListController: UIViewController,UITableViewDelegate,UITableViewDat
         super.viewDidLoad()
         self.initialize()
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let d = "25/03/1991"
-        let db = "25/03/2008"
-        guard let date = dateFormatter.date(from: d) else {return}
-        guard let dateB = dateFormatter.date(from: db) else {return}
-
-        let s = Student(ln: "Fucking-Snow de Westeros", fn: "John", birth: date, gender: Gender.Male, mail: "john.snow@gmail.com", address: "2 rue de westeros", phone: 0603045637, picture: "", actualSchool: "Lycée john Doe", cursusW: Cursus.ingesup, schoolW: Campus.aixEnProvence, xp: "beginner", cv: "cv.pdf", begin: dateB, skill: ["c++","uml"], social: [SocialNetwork.linkedIn:"whatever.com"], course: CourseType.alternance)
-        
-        
-        let t = Student(ln: "Martin", fn: "Veronique", birth: date, gender: Gender.Female, mail: "vero.martin2001@gmail.com", address: "2 rue de westeros", phone: 0603045637, picture: "", actualSchool: "Lycée john Doe", cursusW: Cursus.ingesup, schoolW: Campus.aixEnProvence, xp: "beginner", cv: "cv.pdf", begin: dateB, skill: ["c++","uml"], social: [SocialNetwork.linkedIn:"whatever.com"], course: CourseType.alternance)
-        StudentManager.sharedInstance.listOfStudents.append(s)
-        StudentManager.sharedInstance.listOfStudents.append(t)
         self.studentsTableView.reloadData()
     }
     
@@ -46,7 +34,8 @@ class StudentListController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return StudentManager.sharedInstance.listOfStudents.count
+        return self.model.listOfStudents().count
+        //return StudentManager.sharedInstance.listOfStudents.count
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
                   return 20.0
@@ -56,13 +45,13 @@ class StudentListController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath) as! StudentCell
-        let model = StudentManager.sharedInstance.listOfStudents[indexPath.section]
+        let model = self.model.listOfStudents()[indexPath.section]
         cell.firstNameLb.text = model.firstName
         cell.lastNameLb.text = model.lastName
         cell.mailLb.text = model.mail
         cell.phoneLb.text = String(model.phone)
         cell.actualLevelLb.text = model.actualSchool
-        cell.cursusAskedLb.text = model.cursusWanted.rawValue
+        //cell.cursusAskedLb.text = model.cursusWanted.rawValue
         return cell
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

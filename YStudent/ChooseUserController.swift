@@ -23,8 +23,6 @@ class ChooseUserController: UIViewController,UIGestureRecognizerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
-        
-
     }
     
     func initialize() {
@@ -36,7 +34,7 @@ class ChooseUserController: UIViewController,UIGestureRecognizerDelegate{
         tapYnov.delegate = self
         self.ynovView.addGestureRecognizer(tapYnov)
         
-        let tapProspect = UITapGestureRecognizer(target: self, action: Selector(("handleTapProspect:")))
+        let tapProspect = UITapGestureRecognizer(target: self, action: #selector(handleTapProspect(sender:)))
         tapProspect.delegate = self
         self.studentView.addGestureRecognizer(tapProspect)
         
@@ -47,11 +45,7 @@ class ChooseUserController: UIViewController,UIGestureRecognizerDelegate{
     }
     
     func handleTapProspect(sender: UITapGestureRecognizer? = nil) {
-        
+        self.performSegue(withIdentifier: "showStudentMode", sender: self)
     }
-
-
- 
-    
-
 }
+

@@ -10,10 +10,15 @@
 		0A30B1EB1E44BE3700B8A360 /* SwiftHEXColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A30B1EA1E44BE3700B8A360 /* SwiftHEXColors.framework */; };
 		0A43BAB51E716969001E225E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A43BAB41E716969001E225E /* Realm.framework */; };
 		0A43BAB71E71696E001E225E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A43BAB61E71696E001E225E /* RealmSwift.framework */; };
+		0A5022371E7C713700745D9C /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5022361E7C713700745D9C /* RealmManager.swift */; };
+		0A5022391E7C7F7500745D9C /* TreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5022381E7C7F7500745D9C /* TreeViewController.swift */; };
 		0A686A321E67045D009841BB /* StudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A686A311E67045D009841BB /* StudentCell.xib */; };
 		0A686A341E670503009841BB /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A686A331E670503009841BB /* StudentCell.swift */; };
 		0A686A361E6711C9009841BB /* StudentListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A686A351E6711C9009841BB /* StudentListController.swift */; };
 		0A686A381E6713D3009841BB /* StudentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A686A371E6713D3009841BB /* StudentManager.swift */; };
+		0A7601D11E7952D7002E130D /* StudentCivilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7601D01E7952D7002E130D /* StudentCivilityController.swift */; };
+		0A7601D31E79566F002E130D /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7601D21E79566F002E130D /* IQKeyboardManagerSwift.framework */; };
+		0A7601D51E797F97002E130D /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7601D41E797F97002E130D /* ToastSwiftFramework.framework */; };
 		0A84F4FE1E449A6900E1AE36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A84F4FD1E449A6900E1AE36 /* AppDelegate.swift */; };
 		0A84F5031E449A6900E1AE36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A84F5011E449A6900E1AE36 /* Main.storyboard */; };
 		0A84F5051E449A6900E1AE36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A84F5041E449A6900E1AE36 /* Assets.xcassets */; };
@@ -37,6 +42,7 @@
 		0AB91E1E1E5F1D25004126F5 /* FoldingCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3E9E991E47527800066FE4 /* FoldingCell.framework */; };
 		0AB91E221E5F257A004126F5 /* EventsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB91E211E5F257A004126F5 /* EventsTableController.swift */; };
 		0AC654751E60A9A500D31D43 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC654741E60A9A500D31D43 /* PopoverController.swift */; };
+		0AF0D68A1E7AA73B0055CC7F /* ViewControllerWithLongTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF0D6891E7AA73B0055CC7F /* ViewControllerWithLongTap.swift */; };
 		411893954DB40908A1490078 /* Pods_YStudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B116BD4C2954DE3B2A893DB5 /* Pods_YStudent.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,10 +69,15 @@
 		0A3E9E991E47527800066FE4 /* FoldingCell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FoldingCell.framework; path = Carthage/Build/iOS/FoldingCell.framework; sourceTree = "<group>"; };
 		0A43BAB41E716969001E225E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		0A43BAB61E71696E001E225E /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		0A5022361E7C713700745D9C /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		0A5022381E7C7F7500745D9C /* TreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeViewController.swift; sourceTree = "<group>"; };
 		0A686A311E67045D009841BB /* StudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentCell.xib; sourceTree = "<group>"; };
 		0A686A331E670503009841BB /* StudentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
 		0A686A351E6711C9009841BB /* StudentListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentListController.swift; sourceTree = "<group>"; };
 		0A686A371E6713D3009841BB /* StudentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentManager.swift; sourceTree = "<group>"; };
+		0A7601D01E7952D7002E130D /* StudentCivilityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentCivilityController.swift; sourceTree = "<group>"; };
+		0A7601D21E79566F002E130D /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
+		0A7601D41E797F97002E130D /* ToastSwiftFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToastSwiftFramework.framework; path = Carthage/Build/iOS/ToastSwiftFramework.framework; sourceTree = "<group>"; };
 		0A84F4FA1E449A6900E1AE36 /* YStudent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YStudent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A84F4FD1E449A6900E1AE36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A84F5021E449A6900E1AE36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +106,7 @@
 		0AA5C61B1E60404C00C8E8A4 /* DateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		0AB91E211E5F257A004126F5 /* EventsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableController.swift; sourceTree = "<group>"; };
 		0AC654741E60A9A500D31D43 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
+		0AF0D6891E7AA73B0055CC7F /* ViewControllerWithLongTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerWithLongTap.swift; sourceTree = "<group>"; };
 		4CF86FE4A7143BDE07AC9086 /* Pods-YStudent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YStudent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YStudent/Pods-YStudent.debug.xcconfig"; sourceTree = "<group>"; };
 		B116BD4C2954DE3B2A893DB5 /* Pods_YStudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YStudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFFEDC36C5C69D02C18B04D3 /* Pods-YStudent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YStudent.release.xcconfig"; path = "Pods/Target Support Files/Pods-YStudent/Pods-YStudent.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +123,8 @@
 				0AB91E1E1E5F1D25004126F5 /* FoldingCell.framework in Frameworks */,
 				0A43BAB51E716969001E225E /* Realm.framework in Frameworks */,
 				0AA2E1F71E54578A00061516 /* TextFieldEffects.framework in Frameworks */,
+				0A7601D31E79566F002E130D /* IQKeyboardManagerSwift.framework in Frameworks */,
+				0A7601D51E797F97002E130D /* ToastSwiftFramework.framework in Frameworks */,
 				411893954DB40908A1490078 /* Pods_YStudent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +151,7 @@
 			children = (
 				0AA2E1F21E544C6500061516 /* EventManager.swift */,
 				0A686A371E6713D3009841BB /* StudentManager.swift */,
+				0A5022361E7C713700745D9C /* RealmManager.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -144,6 +159,8 @@
 		0A30B1E91E44BE3700B8A360 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A7601D41E797F97002E130D /* ToastSwiftFramework.framework */,
+				0A7601D21E79566F002E130D /* IQKeyboardManagerSwift.framework */,
 				0A43BAB61E71696E001E225E /* RealmSwift.framework */,
 				0A43BAB41E716969001E225E /* Realm.framework */,
 				0AA2E1F61E54578A00061516 /* TextFieldEffects.framework */,
@@ -238,6 +255,9 @@
 				0AC654741E60A9A500D31D43 /* PopoverController.swift */,
 				0A686A331E670503009841BB /* StudentCell.swift */,
 				0A686A351E6711C9009841BB /* StudentListController.swift */,
+				0A7601D01E7952D7002E130D /* StudentCivilityController.swift */,
+				0AF0D6891E7AA73B0055CC7F /* ViewControllerWithLongTap.swift */,
+				0A5022381E7C7F7500745D9C /* TreeViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -408,6 +428,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/FoldingCell.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ToastSwiftFramework.framework",
 			);
 			outputPaths = (
 			);
@@ -469,7 +491,11 @@
 			files = (
 				0A84F52F1E449B6900E1AE36 /* YnovUser.swift in Sources */,
 				0A686A381E6713D3009841BB /* StudentManager.swift in Sources */,
+				0A7601D11E7952D7002E130D /* StudentCivilityController.swift in Sources */,
 				0AC654751E60A9A500D31D43 /* PopoverController.swift in Sources */,
+				0AF0D68A1E7AA73B0055CC7F /* ViewControllerWithLongTap.swift in Sources */,
+				0A5022391E7C7F7500745D9C /* TreeViewController.swift in Sources */,
+				0A5022371E7C713700745D9C /* RealmManager.swift in Sources */,
 				0AA2E1F31E544C6500061516 /* EventManager.swift in Sources */,
 				0AA2E1F91E545B4D00061516 /* AddEventController.swift in Sources */,
 				0AA5C61C1E60404C00C8E8A4 /* DateView.swift in Sources */,

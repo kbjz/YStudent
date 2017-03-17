@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YStudent/AddEventController.swift"
-            timestampString = "510066068.634115"
+            timestampString = "511276254.542138"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
             landmarkName = "AddEventController"
             landmarkType = "3">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YStudent/AddEventController.swift"
-            timestampString = "510066068.634115"
+            timestampString = "511276254.542138"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344"
+            startingLineNumber = "346"
+            endingLineNumber = "346"
             landmarkName = "textFieldDidBeginEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YStudent/AddEventController.swift"
-            timestampString = "510066068.634115"
+            timestampString = "511276254.542138"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "436"
-            endingLineNumber = "436"
+            startingLineNumber = "438"
+            endingLineNumber = "438"
             landmarkName = "doneDurationPicker(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YStudent/AddEventController.swift"
-            timestampString = "510066068.634115"
+            timestampString = "511276254.542138"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "435"
-            endingLineNumber = "435"
+            startingLineNumber = "437"
+            endingLineNumber = "437"
             landmarkName = "doneDurationPicker(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -185,13 +185,13 @@
                   symbolName = "YStudent.PopoverController.state.getter : YStudent.stateListOf"
                   moduleName = "YStudent"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kevin/Documents/Ing2/YDAYS/App/YStudent/YStudent/PopoverController.swift"
-                  timestampString = "510065816.384453"
+                  urlString = "file:///Users/kevin/Documents/Ing2/YDAYS/AppGit/YStudent/YStudent/PopoverController.swift"
+                  timestampString = "511474820.107484"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
                   endingLineNumber = "22"
-                  offsetFromSymbolStart = "18">
+                  offsetFromSymbolStart = "25">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -200,13 +200,13 @@
                   symbolName = "YStudent.PopoverController.state.setter : YStudent.stateListOf"
                   moduleName = "YStudent"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kevin/Documents/Ing2/YDAYS/App/YStudent/YStudent/PopoverController.swift"
-                  timestampString = "510065816.386342"
+                  urlString = "file:///Users/kevin/Documents/Ing2/YDAYS/AppGit/YStudent/YStudent/PopoverController.swift"
+                  timestampString = "511474820.109365"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
                   endingLineNumber = "22"
-                  offsetFromSymbolStart = "26">
+                  offsetFromSymbolStart = "36">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -215,13 +215,13 @@
                   symbolName = "YStudent.PopoverController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; YStudent.PopoverController"
                   moduleName = "YStudent"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kevin/Documents/Ing2/YDAYS/App/YStudent/YStudent/PopoverController.swift"
-                  timestampString = "510065816.388205"
+                  urlString = "file:///Users/kevin/Documents/Ing2/YDAYS/AppGit/YStudent/YStudent/PopoverController.swift"
+                  timestampString = "511474820.111078"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
                   endingLineNumber = "22"
-                  offsetFromSymbolStart = "190">
+                  offsetFromSymbolStart = "173">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -230,13 +230,13 @@
                   symbolName = "YStudent.PopoverController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;YStudent.PopoverController&gt;"
                   moduleName = "YStudent"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kevin/Documents/Ing2/YDAYS/App/YStudent/YStudent/PopoverController.swift"
-                  timestampString = "510065816.390159"
+                  urlString = "file:///Users/kevin/Documents/Ing2/YDAYS/AppGit/YStudent/YStudent/PopoverController.swift"
+                  timestampString = "511474820.112741"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
                   endingLineNumber = "22"
-                  offsetFromSymbolStart = "124">
+                  offsetFromSymbolStart = "127">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -248,12 +248,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YStudent/AddEventController.swift"
-            timestampString = "510066068.634115"
+            timestampString = "511276254.542138"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "validateTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YStudent/RealmManager.swift"
+            timestampString = "511473415.510429"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "store(s:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

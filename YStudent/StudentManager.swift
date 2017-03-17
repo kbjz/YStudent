@@ -12,5 +12,9 @@ class StudentManager: NSObject {
 
     static let sharedInstance = StudentManager()
     
-    var listOfStudents = [Student]()
+    var listOfStudents = {
+        RealmManager.sharedInstance.getListOfStudents()
+    }
+    var creatingStudent : Student?
+    
 }

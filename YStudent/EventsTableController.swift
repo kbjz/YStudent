@@ -15,7 +15,7 @@ enum EventState {
     case null
 }
 
-class EventsTableController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class EventsTableController: ViewControllerWithLongTap,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var eventsTableView: UITableView!
     var eventState = EventState.toAdd
@@ -27,13 +27,13 @@ class EventsTableController: UIViewController,UITableViewDelegate,UITableViewDat
     func initialize() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
-        let d = "25/03/2017"
+        let d = "25/12/2017"
         guard let date = dateFormatter.date(from: d) else {return}
         let e = Event(location: "paris 12", reason: "Session d'immersion", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.toulouse,Campus.bordeaux,Campus.paris,Campus.lyon], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
         EventManager.sharedInstance.addEvent(e: e)
         let e1 = Event(location: "Aix en provence ", reason: "Salon de l'etudiant", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.bordeaux], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
         EventManager.sharedInstance.addEvent(e: e1)
-        let e2 = Event(location: "paris 20", reason:"Journée portes ouvertes", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.paris], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
+        let e2 = Event(location: "paris 20", reason:"Portes ouvertes", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.paris], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
         EventManager.sharedInstance.addEvent(e: e2)
         eventsTableView.register(UINib(nibName: "EventCell", bundle: nil), forCellReuseIdentifier: "eventCell")
         
@@ -197,13 +197,14 @@ extension Date {
         return dateFormatter.string(from: date)
     }
     
+    // TO DO correct this
     static func getFrenchMonth(m : String)  -> String{
         let months = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"]
         var str : String = ""
         
         for i in 0...months.count - 1 {
-            guard let n = Int(m) else { return "error string to int month"}
-            if n == i {
+            guard let n = Int(m)   else { return "error string to int month"}
+            if n - 1 == i {
                 str = months[i]
                 return str
             } else {
