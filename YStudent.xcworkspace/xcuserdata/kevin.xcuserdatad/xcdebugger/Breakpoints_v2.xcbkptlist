@@ -186,7 +186,7 @@
                   moduleName = "YStudent"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kevin/Documents/Ing2/YDAYS/AppGit/YStudent/YStudent/PopoverController.swift"
-                  timestampString = "511474820.107484"
+                  timestampString = "513266802.414109"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
@@ -201,7 +201,7 @@
                   moduleName = "YStudent"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kevin/Documents/Ing2/YDAYS/AppGit/YStudent/YStudent/PopoverController.swift"
-                  timestampString = "511474820.109365"
+                  timestampString = "513266802.41622"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
@@ -216,7 +216,7 @@
                   moduleName = "YStudent"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kevin/Documents/Ing2/YDAYS/AppGit/YStudent/YStudent/PopoverController.swift"
-                  timestampString = "511474820.111078"
+                  timestampString = "513266802.418865"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
@@ -231,7 +231,7 @@
                   moduleName = "YStudent"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kevin/Documents/Ing2/YDAYS/AppGit/YStudent/YStudent/PopoverController.swift"
-                  timestampString = "511474820.112741"
+                  timestampString = "513266802.421207"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
@@ -271,6 +271,38 @@
             endingLineNumber = "21"
             landmarkName = "store(s:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YStudent/ChooseSchoolController.swift"
+            timestampString = "513268111.295122"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "deselectAllItems(animated:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YStudent/ChooseUserController.swift"
+            timestampString = "513268282.035386"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "UIViewController"
+            landmarkType = "4">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

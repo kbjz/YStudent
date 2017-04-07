@@ -49,3 +49,9 @@ class ChooseUserController: UIViewController,UIGestureRecognizerDelegate{
     }
 }
 
+/*extension UIViewController {
+    func addGestureToChangeUser {
+        let tap = UIGestureRecognizer(target: self.view, action: Selector("handleLongTap")
+    }
+}
+ */

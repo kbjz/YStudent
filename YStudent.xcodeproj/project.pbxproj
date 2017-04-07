@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A08BA401E9796D8003A0506 /* ChooseSchoolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08BA3F1E9796D8003A0506 /* ChooseSchoolController.swift */; };
+		0A08BA421E97A294003A0506 /* schoolCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A08BA411E97A294003A0506 /* schoolCollectionCell.xib */; };
+		0A08BA441E97A305003A0506 /* SchoolCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08BA431E97A305003A0506 /* SchoolCollectionCell.swift */; };
 		0A30B1EB1E44BE3700B8A360 /* SwiftHEXColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A30B1EA1E44BE3700B8A360 /* SwiftHEXColors.framework */; };
 		0A43BAB51E716969001E225E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A43BAB41E716969001E225E /* Realm.framework */; };
 		0A43BAB71E71696E001E225E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A43BAB61E71696E001E225E /* RealmSwift.framework */; };
@@ -64,6 +67,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A08BA3F1E9796D8003A0506 /* ChooseSchoolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseSchoolController.swift; sourceTree = "<group>"; };
+		0A08BA411E97A294003A0506 /* schoolCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = schoolCollectionCell.xib; sourceTree = "<group>"; };
+		0A08BA431E97A305003A0506 /* SchoolCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolCollectionCell.swift; sourceTree = "<group>"; };
 		0A2D60AE1E44CB0800F2B431 /* ColorMatchTabs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ColorMatchTabs.framework; path = Carthage/Build/iOS/ColorMatchTabs.framework; sourceTree = "<group>"; };
 		0A30B1EA1E44BE3700B8A360 /* SwiftHEXColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHEXColors.framework; path = Carthage/Build/iOS/SwiftHEXColors.framework; sourceTree = "<group>"; };
 		0A3E9E991E47527800066FE4 /* FoldingCell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FoldingCell.framework; path = Carthage/Build/iOS/FoldingCell.framework; sourceTree = "<group>"; };
@@ -240,6 +246,8 @@
 				0AA5691F1E54952700DF7590 /* CampusCell.swift */,
 				0AA5C6171E603C5600C8E8A4 /* DateView.xib */,
 				0A686A311E67045D009841BB /* StudentCell.xib */,
+				0A08BA411E97A294003A0506 /* schoolCollectionCell.xib */,
+				0A08BA431E97A305003A0506 /* SchoolCollectionCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -258,6 +266,7 @@
 				0A7601D01E7952D7002E130D /* StudentCivilityController.swift */,
 				0AF0D6891E7AA73B0055CC7F /* ViewControllerWithLongTap.swift */,
 				0A5022381E7C7F7500745D9C /* TreeViewController.swift */,
+				0A08BA3F1E9796D8003A0506 /* ChooseSchoolController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -394,6 +403,7 @@
 				0A84F5051E449A6900E1AE36 /* Assets.xcassets in Resources */,
 				0A84F5031E449A6900E1AE36 /* Main.storyboard in Resources */,
 				0AA5C6181E603C5600C8E8A4 /* DateView.xib in Resources */,
+				0A08BA421E97A294003A0506 /* schoolCollectionCell.xib in Resources */,
 				0AA5691E1E5494A300DF7590 /* CampusCell.xib in Resources */,
 				0A686A321E67045D009841BB /* StudentCell.xib in Resources */,
 			);
@@ -489,6 +499,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A08BA401E9796D8003A0506 /* ChooseSchoolController.swift in Sources */,
+				0A08BA441E97A305003A0506 /* SchoolCollectionCell.swift in Sources */,
 				0A84F52F1E449B6900E1AE36 /* YnovUser.swift in Sources */,
 				0A686A381E6713D3009841BB /* StudentManager.swift in Sources */,
 				0A7601D11E7952D7002E130D /* StudentCivilityController.swift in Sources */,

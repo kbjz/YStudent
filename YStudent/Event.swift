@@ -21,11 +21,12 @@ enum Campus : String  {
 
 // to do complete all list
 enum Cursus : String {
-    case manaa = "MANAA"
     case limart = "Limart"
     case ingesup = "Ingesup"
     case isee = "ISEE"
-    case cpMultimedia = "CP Multimedia"
+    case idi = "Idi"
+    case eicar = "Eicar"
+    case estei = "Estei"
     case other = "Other"
     case null
 }

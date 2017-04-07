@@ -15,6 +15,15 @@ import UIKit
     case null
 }
 
+enum LevelWanted {
+    case bachelor
+    case master
+    case manaa
+    case postBac
+    case postBac2
+    case postBac3
+}
+
 @objc enum CourseType : Int {
     case initial
     case alternance
@@ -27,6 +36,11 @@ import UIKit
 }
 class Student : Object {
     
+    // realm object
+    
+    
+    
+    
     dynamic var lastName : String   = "Doe"
     dynamic var firstName : String  = "John"
     dynamic var birthdate : Date    = Date()
@@ -36,12 +50,13 @@ class Student : Object {
     dynamic var phone : Int         = 0676456345
     dynamic var picture : String    = "url/picture"
     dynamic var actualSchool : String = "baccaluareat"
-  //  dynamic var cursusWanted : Cursus
-  //  dynamic var schoolWanted : Campus
+   // var cursusWanted : Cursus
+   // var schoolWanted : Campus
+    //var levelWanted : LevelWanted
     dynamic var experience : String = " 3 stages "
     dynamic var cv : String = "url"
     dynamic var beginningDate : Date = Date()
- //   dynamic var skill : RLMArray   = ["swift","php","oracle"]
+    //   dynamic var skill : RLMArray   = ["swift","php","oracle"]
     //dynamic var socialAdresses : [SocialNetwork : String]
     dynamic var course : CourseType = CourseType.alternance
     // TO DO
@@ -60,8 +75,8 @@ class Student : Object {
         self.phone = 11111111
         self.picture = "/nopicture"
         self.actualSchool = "IUT Whatever"
-       // self.cursusWanted = Cursus.null
-       // self.schoolWanted = Campus.null
+        // self.cursusWanted = Cursus.null
+        // self.schoolWanted = Campus.null
         self.experience = "lorem ipsum"
         self.cv = "whatever.pdf"
         self.beginningDate = Date()
@@ -72,7 +87,7 @@ class Student : Object {
     
     required init(realm: RLMRealm, schema: RLMObjectSchema) {
         super.init(realm: realm, schema: schema)
-    
+        
         //fatalError("init(realm:schema:) has not been implemented")
     }
     
@@ -82,27 +97,27 @@ class Student : Object {
     }
     
     //
-   /* public init(ln : String, fn: String, birth: Date, gender: Gender, mail: String, address: String, phone: Int, picture: String, actualSchool: String, cursusW: Cursus, schoolW: Campus, xp : String, cv: String, begin: Date, skill: [String], social: Dictionary<SocialNetwork, String>,course:CourseType) {
-        
-        self.lastName = ln
-        self.firstName = fn
-        self.birthdate = birth
-        self.gender = gender
-        self.mail = mail
-        self.address = address
-        self.phone = phone
-        self.picture = picture
-        self.actualSchool = actualSchool
-        self.cursusWanted = cursusW
-        self.schoolWanted = schoolW
-        self.experience = xp
-        self.cv = cv
-        self.beginningDate = begin
-        self.skill = skill
-        self.socialAdresses = social
-        self.course = course
-    }
-*/
+    /* public init(ln : String, fn: String, birth: Date, gender: Gender, mail: String, address: String, phone: Int, picture: String, actualSchool: String, cursusW: Cursus, schoolW: Campus, xp : String, cv: String, begin: Date, skill: [String], social: Dictionary<SocialNetwork, String>,course:CourseType) {
+     
+     self.lastName = ln
+     self.firstName = fn
+     self.birthdate = birth
+     self.gender = gender
+     self.mail = mail
+     self.address = address
+     self.phone = phone
+     self.picture = picture
+     self.actualSchool = actualSchool
+     self.cursusWanted = cursusW
+     self.schoolWanted = schoolW
+     self.experience = xp
+     self.cv = cv
+     self.beginningDate = begin
+     self.skill = skill
+     self.socialAdresses = social
+     self.course = course
+     }
+     */
     
     
 }

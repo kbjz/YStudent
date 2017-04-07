@@ -60,6 +60,14 @@ class StudentCivilityController: ViewControllerWithLongTap ,UITextFieldDelegate,
         self.postalAdressTf.layer.borderWidth = 1.0
         self.postalAdressTf.layer.cornerRadius = 4.0
         
+        self.postalCode.layer.borderColor = UIColor.flatGray.cgColor
+        self.postalCode.layer.borderWidth = 1.0
+        self.postalCode.layer.cornerRadius = 4.0
+        
+        self.cityTf.layer.borderColor = UIColor.flatGray.cgColor
+        self.cityTf.layer.borderWidth = 1.0
+        self.cityTf.layer.cornerRadius = 4.0
+        
         self.phoneTf.layer.borderColor = UIColor.flatGray.cgColor
         self.phoneTf.layer.borderWidth = 1.0
         self.phoneTf.layer.cornerRadius = 4.0

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5F0-a4-QtR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5F0-a4-QtR">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -99,6 +99,14 @@
                                     <segue destination="wRg-oS-8kY" kind="show" id="NQ0-qr-Kk3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9D-BO-ei2">
+                                <rect key="frame" x="256" y="644" width="201" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Choix du cursus"/>
+                                <connections>
+                                    <segue destination="jqJ-GZ-3zH" kind="show" id="0gJ-sv-qMa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -107,6 +115,115 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASJ-ad-Q4N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1391.40625" y="740.625"/>
+        </scene>
+        <!--Ecole souhaitée-->
+        <scene sceneID="BJu-Rk-peR">
+            <objects>
+                <viewController id="Vge-Gi-loS" customClass="ChooseSchoolController" customModule="YStudent" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eTI-Rm-Dhy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sb8-PZ-gtT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g9L-mO-Qwd">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hzG-nl-xGD">
+                                <rect key="frame" x="64" y="136.5" width="640" height="410"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JuS-9E-rJV">
+                                    <size key="itemSize" width="200" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uqK-oS-oTT">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m09-d4-KOX">
+                                <rect key="frame" x="64" y="626.5" width="640" height="237.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="50Y-xu-5gS">
+                                    <size key="itemSize" width="300" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="levelCell" id="dmW-gH-cDR" customClass="LevelCell" customModule="YStudent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psR-qF-tbR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="psR-qF-tbR" firstAttribute="leading" secondItem="dmW-gH-cDR" secondAttribute="leading" id="96U-U5-lY4"/>
+                                            <constraint firstAttribute="bottom" secondItem="psR-qF-tbR" secondAttribute="bottom" id="HHs-I8-EoC"/>
+                                            <constraint firstItem="psR-qF-tbR" firstAttribute="top" secondItem="dmW-gH-cDR" secondAttribute="top" id="O5O-61-Sqm"/>
+                                            <constraint firstAttribute="trailing" secondItem="psR-qF-tbR" secondAttribute="trailing" id="sZg-4z-gvf"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="title" destination="psR-qF-tbR" id="BcE-6P-ExZ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIK-iE-T2D">
+                                <rect key="frame" x="234" y="904" width="300" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="GoB-zC-Hfc"/>
+                                    <constraint firstAttribute="height" constant="80" id="rOY-vU-pRv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
+                                <state key="normal" title="Etape suivante">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextStepTapped:" destination="Vge-Gi-loS" eventType="touchUpInside" id="IRN-9j-iQZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="m09-d4-KOX" firstAttribute="centerX" secondItem="g9L-mO-Qwd" secondAttribute="centerX" id="42C-6k-ZIe"/>
+                            <constraint firstItem="hzG-nl-xGD" firstAttribute="centerX" secondItem="g9L-mO-Qwd" secondAttribute="centerX" id="4my-d1-GN5"/>
+                            <constraint firstItem="hzG-nl-xGD" firstAttribute="centerY" secondItem="g9L-mO-Qwd" secondAttribute="centerY" multiplier="2:3" id="CGz-k9-lnj"/>
+                            <constraint firstItem="Sb8-PZ-gtT" firstAttribute="top" secondItem="m09-d4-KOX" secondAttribute="bottom" constant="160" id="J5d-qd-cNd"/>
+                            <constraint firstItem="rIK-iE-T2D" firstAttribute="centerX" secondItem="g9L-mO-Qwd" secondAttribute="centerX" id="Jhd-cT-Hx6"/>
+                            <constraint firstItem="m09-d4-KOX" firstAttribute="width" secondItem="hzG-nl-xGD" secondAttribute="width" id="OhS-NV-sLb"/>
+                            <constraint firstItem="hzG-nl-xGD" firstAttribute="height" secondItem="g9L-mO-Qwd" secondAttribute="height" multiplier="0.4" id="jB0-gV-bDp"/>
+                            <constraint firstItem="Sb8-PZ-gtT" firstAttribute="top" secondItem="rIK-iE-T2D" secondAttribute="bottom" constant="40" id="jeM-6r-c9w"/>
+                            <constraint firstItem="m09-d4-KOX" firstAttribute="top" secondItem="hzG-nl-xGD" secondAttribute="bottom" constant="80" id="oPy-mi-K7m"/>
+                            <constraint firstItem="hzG-nl-xGD" firstAttribute="width" secondItem="g9L-mO-Qwd" secondAttribute="width" multiplier="5:6" id="ycR-qG-HV8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ecole souhaitée" id="cXi-dS-FPo"/>
+                    <connections>
+                        <outlet property="collectionView" destination="hzG-nl-xGD" id="0ME-NX-qwi"/>
+                        <outlet property="levelCollectionView" destination="m09-d4-KOX" id="3T6-Fs-mIy"/>
+                        <outlet property="nextStepBt" destination="rIK-iE-T2D" id="pRo-kY-0ic"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BIH-UE-mMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802.34375" y="1584.9609375"/>
         </scene>
         <!--Civilité-->
         <scene sceneID="AIu-Sa-ydb">
@@ -121,57 +238,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crp-JP-pyV">
-                                <rect key="frame" x="90" y="284" width="588" height="526"/>
+                                <rect key="frame" x="153.5" y="284" width="461" height="522"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Prenom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNZ-75-OHU">
-                                        <rect key="frame" x="0.0" y="0.0" width="588" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="461" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="dpL-sJ-Euu"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="27"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Nom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMb-60-nyU">
-                                        <rect key="frame" x="0.0" y="70" width="588" height="40"/>
+                                        <rect key="frame" x="0.0" y="70" width="461" height="40"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="27"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Date de naissance" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xNc-qU-6tR">
-                                        <rect key="frame" x="0.0" y="140" width="588" height="40"/>
+                                        <rect key="frame" x="0.0" y="140" width="461" height="40"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="27"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Adresse mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9I-DA-zuP">
-                                        <rect key="frame" x="0.0" y="210" width="588" height="40"/>
+                                        <rect key="frame" x="0.0" y="210" width="461" height="40"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="27"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Telephone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xim-jU-SYM">
-                                        <rect key="frame" x="0.0" y="280" width="588" height="40"/>
+                                        <rect key="frame" x="0.0" y="280" width="461" height="40"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="27"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Adresse postale" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PRH-M1-X4s">
-                                        <rect key="frame" x="0.0" y="350" width="588" height="40"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Adresse postale" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PRH-M1-X4s">
+                                        <rect key="frame" x="0.0" y="350" width="461" height="40"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="27"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Code Postal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVr-TB-Sfr">
-                                        <rect key="frame" x="0.0" y="420" width="588" height="36"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Code Postal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVr-TB-Sfr">
+                                        <rect key="frame" x="0.0" y="420" width="461" height="32"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="27"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Ville" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJR-Z0-Hze">
-                                        <rect key="frame" x="0.0" y="486" width="588" height="40"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Ville" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJR-Z0-Hze">
+                                        <rect key="frame" x="0.0" y="482" width="461" height="40"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="27"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
@@ -239,17 +356,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="crp-JP-pyV" firstAttribute="width" secondItem="dpy-9x-twd" secondAttribute="width" multiplier="0.6" id="2Ee-pm-vCJ"/>
                             <constraint firstItem="9Ng-cK-EdU" firstAttribute="top" secondItem="gyf-za-jex" secondAttribute="bottom" id="673-vj-abm"/>
-                            <constraint firstItem="crp-JP-pyV" firstAttribute="top" secondItem="fj6-lq-ZMp" secondAttribute="bottom" constant="30" id="Bhv-Vx-SAq"/>
                             <constraint firstItem="9Ng-cK-EdU" firstAttribute="top" secondItem="T5A-NX-Xv6" secondAttribute="bottom" constant="40" id="Bvx-dZ-apy"/>
                             <constraint firstItem="fj6-lq-ZMp" firstAttribute="top" secondItem="HAp-61-b1k" secondAttribute="bottom" constant="40" id="KEI-bU-azO"/>
-                            <constraint firstItem="crp-JP-pyV" firstAttribute="leading" secondItem="dpy-9x-twd" secondAttribute="leading" constant="90" id="RDa-FN-qE6"/>
-                            <constraint firstAttribute="trailing" secondItem="crp-JP-pyV" secondAttribute="trailing" constant="90" id="WNn-fe-Zqg"/>
+                            <constraint firstItem="crp-JP-pyV" firstAttribute="centerX" secondItem="dpy-9x-twd" secondAttribute="centerX" id="aNS-1g-RdS"/>
                             <constraint firstAttribute="trailing" secondItem="T5A-NX-Xv6" secondAttribute="trailing" constant="70" id="aar-JP-9OY"/>
                             <constraint firstItem="T5A-NX-Xv6" firstAttribute="leading" secondItem="dpy-9x-twd" secondAttribute="leading" constant="70" id="dHc-GY-fT3"/>
                             <constraint firstItem="gyf-za-jex" firstAttribute="leading" secondItem="dpy-9x-twd" secondAttribute="leading" id="hqs-he-qKa"/>
                             <constraint firstItem="fj6-lq-ZMp" firstAttribute="centerX" secondItem="dpy-9x-twd" secondAttribute="centerX" id="kJh-7T-wqJ"/>
                             <constraint firstAttribute="trailing" secondItem="gyf-za-jex" secondAttribute="trailing" id="nx4-jS-33p"/>
+                            <constraint firstItem="crp-JP-pyV" firstAttribute="top" secondItem="fj6-lq-ZMp" secondAttribute="bottom" priority="750" constant="30" id="tY1-ES-OvE"/>
+                            <constraint firstItem="T5A-NX-Xv6" firstAttribute="top" secondItem="crp-JP-pyV" secondAttribute="bottom" priority="750" constant="98" id="xph-TO-pco"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Civilité" id="kNV-gf-OXQ"/>
@@ -270,7 +388,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dor-Mo-4Y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gqV-cp-mUE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2342" y="1138"/>
+            <point key="canvasLocation" x="3571.09375" y="1334.765625"/>
         </scene>
         <!--Visualiser contacts existants-->
         <scene sceneID="XUX-fu-lcw">
@@ -655,7 +773,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1p-D1-6hr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376.5625" y="1426.7578125"/>
+            <point key="canvasLocation" x="2820.3125" y="1027.734375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iUp-d9-5n9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jqJ-GZ-3zH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q3x-v8-aVV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vge-Gi-loS" kind="relationship" relationship="rootViewController" id="0Fc-be-nk8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lkt-Vb-klV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036.71875" y="1584.9609375"/>
         </scene>
     </scenes>
     <resources>

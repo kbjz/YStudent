@@ -16,5 +16,11 @@ class StudentManager: NSObject {
         RealmManager.sharedInstance.getListOfStudents()
     }
     var creatingStudent : Student?
+    var selectedSchool : Cursus?
+  //  var selectedLevel : LevelWanted
+    
+    var bachelorMastere  = ["Bachelor","Mastère"]
+    var bachelorMastereManaa  = ["Bachelor","Mastère","MANAA"]
+    var postBac  = ["Post-Bac","Post-Bac + 2","Post-Bac + 3"]
     
 }

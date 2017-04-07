@@ -18,7 +18,7 @@ class EventManager: NSObject {
     var listOfEvents = [Event]()
     var selectedEvent : Event?
     var listOfCampus = [Campus.toulouse,Campus.aixEnProvence,Campus.bordeaux,Campus.lyon,Campus.nantes,Campus.paris,Campus.other]
-    var listOfCursus = [Cursus.cpMultimedia,Cursus.ingesup,Cursus.isee,Cursus.limart,Cursus.manaa,Cursus.other]
+    var listOfCursus = [Cursus.estei,Cursus.ingesup,Cursus.isee,Cursus.limart,Cursus.eicar,Cursus.idi]
     var listOfDuration = [Duration.halfDay,Duration.day,Duration.twoDays,Duration.threeDays,Duration.oneWeek]
     var listOfYnovReason = [YnovReason.JPO,YnovReason.ImmersiveSession,YnovReason.DayInfos,YnovReason.other]
     
