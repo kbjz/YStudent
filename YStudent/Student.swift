@@ -15,13 +15,28 @@ import UIKit
     case null
 }
 
-enum LevelWanted {
-    case bachelor
-    case master
-    case manaa
-    case postBac
-    case postBac2
-    case postBac3
+enum LevelWanted : String {
+    case bachelor = "Bachelor"
+    case master = "Mastère"
+    case manaa = "MANAA"
+    case postBac = "Post-Bac"
+    case postBac2 = "Post-Bac + 2"
+    case postBac3 = "Post-Bac + 3"
+}
+
+enum ProgramWanted : String {
+    case bMarket = "Chef de projet marketing et commercial"
+    case bComm = "Chef de projet en communication"
+    case mManagement = "Management stratégique et international"
+    case bSI = "Architecture et systèmes d'informations"
+    case mSI = "Expert informatique et systèmes d'informations"
+    case manaa = " Mise à niveau en Arts appliqués"
+    case bMultimedia = "Infographie et multimédia"
+    case mMultimedia = "Chef de produit multimedia"
+    case bEmbarque = " Systèmes embarqués"
+    case bts = "BTS Audiovisuel"
+    case formation6 = "Formation de 6 mois"
+    case formation1 = "Formation de 1 à 2 ans"
 }
 
 @objc enum CourseType : Int {

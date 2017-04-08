@@ -15,12 +15,22 @@ class StudentManager: NSObject {
     var listOfStudents = {
         RealmManager.sharedInstance.getListOfStudents()
     }
+    let programsIseeB = [ProgramWanted.bComm,ProgramWanted.bMarket]
+    let programsIseeM = [ProgramWanted.mManagement]
+    let programsIngesupB = [ProgramWanted.bSI]
+    let programsIngesupM = [ProgramWanted.mSI]
+    let programsEstei = [ProgramWanted.bMultimedia,ProgramWanted.bEmbarque]
+    let programsLimartMa = [ProgramWanted.manaa]
+    let programsLimartB = [ProgramWanted.bMultimedia]
+    let programsLimartM = [ProgramWanted.mMultimedia]
+    let programsEicar = [ProgramWanted.formation1,ProgramWanted.bts,ProgramWanted.formation6]
     var creatingStudent : Student?
     var selectedSchool : Cursus?
-  //  var selectedLevel : LevelWanted
+    var selectedLevel : LevelWanted?
+    var selectedProgram : ProgramWanted?
     
-    var bachelorMastere  = ["Bachelor","Mastère"]
-    var bachelorMastereManaa  = ["Bachelor","Mastère","MANAA"]
-    var postBac  = ["Post-Bac","Post-Bac + 2","Post-Bac + 3"]
+    var bachelorMastere  = [LevelWanted.bachelor.rawValue,LevelWanted.master.rawValue]
+    var bachelorMastereManaa  = [LevelWanted.bachelor.rawValue,LevelWanted.master.rawValue,LevelWanted.manaa.rawValue]
+    var postBac  = [LevelWanted.postBac.rawValue,LevelWanted.postBac2.rawValue,LevelWanted.postBac3.rawValue]
     
 }

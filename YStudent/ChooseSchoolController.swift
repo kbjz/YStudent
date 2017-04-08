@@ -10,10 +10,10 @@ import UIKit
 
 class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
+    @IBOutlet weak var programCollectionView: UICollectionView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var levelCollectionView: UICollectionView!
     @IBOutlet weak var nextStepBt: UIButton!
-  
     
     
     
@@ -28,7 +28,6 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
         super.viewDidLoad()
         self.initialize()
         
-        // Do any additional setup after loading the view.
     }
     
     func initialize() {
@@ -46,12 +45,20 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
         self.collectionView.register(UINib.init(nibName: "schoolCollectionCell", bundle: nil), forCellWithReuseIdentifier: "schoolCell")
         self.collectionView.allowsMultipleSelection = false
         self.levelCollectionView.allowsMultipleSelection = false
+        
+        self.programCollectionView.tag = 2
+        self.programCollectionView.allowsMultipleSelection = false
+        self.programCollectionView.delegate = self
+        self.programCollectionView.dataSource = self
+        self.programCollectionView.isHidden = true
+        self.programCollectionView.isUserInteractionEnabled = false
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView.tag == 0 {
+        switch collectionView.tag {
+        case 0:
             return EventManager.sharedInstance.listOfCursus.count
-        } else {
+        case 1:
             let school = StudentManager.sharedInstance.selectedSchool
             if school  == Cursus.ingesup || school == Cursus.isee || school == Cursus.estei {
                 return StudentManager.sharedInstance.bachelorMastere.count
@@ -62,27 +69,60 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
             if school == Cursus.eicar {
                 return StudentManager.sharedInstance.postBac.count
             }
-            return 0
+        case 2:
+            if let level = StudentManager.sharedInstance.selectedLevel {
+                switch level  {
+                    
+                case LevelWanted.bachelor:
+                    if StudentManager.sharedInstance.selectedSchool == Cursus.isee || StudentManager.sharedInstance.selectedSchool == Cursus.estei {
+                        return 2
+                    } else {
+                        return 1
+                    }
+                    
+                case LevelWanted.master:
+                    if StudentManager.sharedInstance.selectedSchool == Cursus.estei {
+                        return 2
+                    } else {
+                        return 1
+                    }
+                case LevelWanted.manaa:
+                    return 1
+                    
+                case LevelWanted.postBac:
+                    return 3
+                default:
+                    print("lvl not found ")
+                }
+            }
+        default:
+            break
         }
-        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView.tag == 0 {
+        
+        let cell = UICollectionViewCell()
+        switch collectionView.tag {
+        case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "schoolCell", for: indexPath) as! SchoolCollectionCell
             cell.layer.cornerRadius = 8.0
             cell.tag = indexPath.row
             switch indexPath.row {
+            // ursus.estei,Cursus.ingesup,Cursus.isee,Cursus.limart,Cursus.eicar,Cursus.idi]
             case 0:
-                cell.picture.image = UIImage(named: "ingesup")
-            case 1:
                 cell.picture.image = UIImage(named: "estei")
+                
+            case 1:
+                cell.picture.image = UIImage(named: "ingesup")
             case 2:
-                cell.picture.image = UIImage(named: "eicar")
+                cell.picture.image = UIImage(named: "isee")
+                
             case 3:
                 cell.picture.image = UIImage(named: "limart")
             case 4:
-                cell.picture.image = UIImage(named: "isee")
+                cell.picture.image = UIImage(named: "eicar")
             case 5:
                 cell.picture.image = UIImage(named: "idi")
             default:
@@ -91,8 +131,7 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
             }
             
             return cell
-            
-        } else {
+        case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "levelCell", for: indexPath) as! LevelCell
             cell.layer.cornerRadius = 8.0
             cell.layer.borderWidth = 0.8
@@ -108,17 +147,77 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
                 cell.title.text = StudentManager.sharedInstance.postBac[indexPath.row]
             }
             return cell
+        case 2:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "programCell", for: indexPath) as! ProgramCell
+            cell.layer.cornerRadius = 8.0
+            cell.layer.borderWidth = 0.8
+            cell.layer.borderColor = UIColor.ynovPink.cgColor
+            if let level = StudentManager.sharedInstance.selectedLevel {
+                switch level  {
+                    
+                case LevelWanted.bachelor:
+                    if let school = StudentManager.sharedInstance.selectedSchool {
+                        
+                        switch school  {
+                        case .isee :
+                            cell.bottomLabel.text = StudentManager.sharedInstance.programsIseeB[indexPath.row].rawValue
+                        case .ingesup :
+                            cell.bottomLabel.text = StudentManager.sharedInstance.programsIngesupB[indexPath.row].rawValue
+                        case .estei :
+                            cell.bottomLabel.text = StudentManager.sharedInstance.programsEstei[indexPath.row].rawValue
+                        case .limart :
+                            cell.bottomLabel.text = StudentManager.sharedInstance.programsLimartB[indexPath.row].rawValue
+                        default:
+                            print("school not found")
+                        }
+                        return cell
+                    }
+                case LevelWanted.master:
+                    if let school = StudentManager.sharedInstance.selectedSchool {
+                       
+                        switch school  {
+                        case .isee :
+                            cell.bottomLabel.text = StudentManager.sharedInstance.programsIseeM[indexPath.row].rawValue
+                        case .ingesup :
+                            cell.bottomLabel.text = StudentManager.sharedInstance.programsIngesupM[indexPath.row].rawValue
+                        case .estei :
+                            cell.bottomLabel.text = StudentManager.sharedInstance.programsEstei[indexPath.row].rawValue
+                        case .limart :
+                            cell.bottomLabel.text = StudentManager.sharedInstance.programsLimartM[indexPath.row].rawValue
+                        default:
+                            print("school not found")
+                        }
+                        return cell
+                    }
+                case LevelWanted.manaa:
+                    cell.bottomLabel.text = StudentManager.sharedInstance.programsLimartMa[indexPath.row].rawValue
+                    return cell
+                case LevelWanted.postBac:
+                    cell.bottomLabel.text = StudentManager.sharedInstance.programsEicar[indexPath.row].rawValue
+                    return cell
+                default:
+                    print("default ")
+                }
+            }
+        default:
+            break
         }
+        return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView.tag == 0 {
+        switch collectionView.tag {
+        case 0:
+            
+            self.programCollectionView.isUserInteractionEnabled = false
+            self.programCollectionView.isHidden = true
             self.nextStepBt.isHidden = true
             self.nextStepBt.isUserInteractionEnabled = false
             self.levelCollectionView.deselectAllItems(animated: true)
+            self.programCollectionView.deselectAllItems()
             if let cell = collectionView.cellForItem(at: indexPath) {
-                cell.layer.borderColor = UIColor.ynovGreen.cgColor
-                cell.layer.backgroundColor = UIColor.ynovGreen.cgColor
+                cell.handleColorForSelection()
                 StudentManager.sharedInstance.selectedSchool = EventManager.sharedInstance.listOfCursus[indexPath.row]
                 if StudentManager.sharedInstance.selectedSchool == Cursus.idi {
                     self.nextStepBt.isHidden = false
@@ -128,22 +227,66 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
                     
                 }
                 self.levelCollectionView.reloadData()
-               
             }
-        } else {
-            if let cell = collectionView.cellForItem(at: indexPath) {
-                cell.layer.borderColor = UIColor.ynovGreen.cgColor
-                cell.layer.backgroundColor = UIColor.ynovGreen.cgColor
-                self.nextStepBt.isHidden = false
-                self.nextStepBt.isUserInteractionEnabled = true
-                
-            }
-        }
-    }
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-         if collectionView.tag == 1 {
+        case 1:
+           
             self.nextStepBt.isHidden = true
             self.nextStepBt.isUserInteractionEnabled = false
+            if let cell = collectionView.cellForItem(at: indexPath) {
+                let cellTyped = collectionView.cellForItem(at: indexPath) as! LevelCell
+                cellTyped.handleColorForSelectState()
+                cell.handleColorForSelection()
+                self.programCollectionView.deselectAllItems()
+                let school = StudentManager.sharedInstance.selectedSchool
+                if school  == Cursus.ingesup || school == Cursus.isee || school == Cursus.estei {
+                    StudentManager.sharedInstance.selectedLevel = LevelWanted(rawValue: StudentManager.sharedInstance.bachelorMastere[indexPath.row])
+                    
+                }
+                if school == Cursus.limart {
+                    StudentManager.sharedInstance.selectedLevel = LevelWanted(rawValue: StudentManager.sharedInstance.bachelorMastereManaa[indexPath.row])
+                }
+                if school == Cursus.eicar {
+                    StudentManager.sharedInstance.selectedLevel = LevelWanted(rawValue: StudentManager.sharedInstance.postBac[indexPath.row])                }
+            }
+            self.programCollectionView.isHidden = false
+            self.programCollectionView.isUserInteractionEnabled = true
+            self.programCollectionView.reloadData()
+        case 2:
+            
+            if let cell = collectionView.cellForItem(at: indexPath) {
+                let cellTyped = collectionView.cellForItem(at: indexPath) as! ProgramCell
+                cellTyped.handleColorForDeselectState()
+                cell.handleColorForSelection()
+                self.nextStepBt.isHidden = false
+                self.nextStepBt.isUserInteractionEnabled = true
+            }
+        default:
+            print("wired")
+        }
+        
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if collectionView.tag == 1 || collectionView.tag == 0 {
+            self.nextStepBt.isHidden = true
+            self.nextStepBt.isUserInteractionEnabled = false
+        }
+        if collectionView.tag == 1 {
+            let cellTyped = collectionView.cellForItem(at: indexPath) as! LevelCell
+            cellTyped.handleColorForDeselectState()
+        }
+        
+        if collectionView.tag == 0 {
+            self.programCollectionView.isUserInteractionEnabled = false
+            self.programCollectionView.isHidden = true
+            
+        }
+        if collectionView.tag == 2 {
+             let cellTyped = collectionView.cellForItem(at: indexPath) as! ProgramCell
+            cellTyped.handleColorForDeselectState()
+            self.programCollectionView.isUserInteractionEnabled = false
+            self.programCollectionView.isHidden = true
+            
         }
         
         if let cell = collectionView.cellForItem(at: indexPath) {
@@ -151,8 +294,14 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
             cell.layer.backgroundColor = UIColor.clear.cgColor
         }
         
+        
+        
+        
         // }
     }
+    
+    
+    
     
     @IBAction func nextStepTapped(_ sender: Any) {
         // update creating User
@@ -163,14 +312,30 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
     
 }
 
-
+extension UICollectionViewCell {
+    func handleColorForSelection() {
+        self.layer.borderColor = UIColor.ynovGreen.cgColor
+        self.layer.backgroundColor = UIColor.ynovGreen.cgColor
+        
+    }
+    
+}
 
 
 extension UICollectionView {
     
     func deselectAllItems(animated: Bool = false) {
+      
         for indexPath in self.indexPathsForSelectedItems ?? [] {
             self.deselectItem(at: indexPath, animated: animated)
+            if self.tag == 1 {
+                let cellTyped = self.cellForItem(at: indexPath) as! LevelCell
+                cellTyped.handleColorForDeselectState()
+            }
+            if self.tag == 2 {
+                let cellTyped = self.cellForItem(at: indexPath) as! ProgramCell
+                cellTyped.handleColorForDeselectState()
+            }
             if let cell = self.cellForItem(at: indexPath) {
                 cell.layer.borderColor = UIColor.ynovPink.cgColor
                 cell.layer.backgroundColor = UIColor.clear.cgColor
@@ -183,6 +348,29 @@ extension UICollectionView {
 
 class LevelCell : UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
+    
+    func handleColorForSelectState() {
+        self.title.textColor = UIColor.flatWhite
+    }
+    
+    func handleColorForDeselectState() {
+        self.title.textColor = UIColor.flatBlack
+    }
+}
+
+
+class ProgramCell : UICollectionViewCell {
+    
+ 
+    @IBOutlet weak var bottomLabel: UILabel!
+    func handleColorForSelectState() {
+        
+        self.bottomLabel.textColor = UIColor.flatWhite
+    }
+    func handleColorForDeselectState() {
+        
+        self.bottomLabel.textColor = UIColor.flatBlack
+    }
 }
 
 
