@@ -15,7 +15,7 @@ enum EventState {
     case null
 }
 
-class EventsTableController: ViewControllerWithLongTap,UITableViewDelegate,UITableViewDataSource {
+class EventsTableController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var eventsTableView: UITableView!
     var eventState = EventState.toAdd
@@ -25,6 +25,7 @@ class EventsTableController: ViewControllerWithLongTap,UITableViewDelegate,UITab
         self.eventsTableView.reloadData()
     }
     func initialize() {
+        self.addGestureToChangeUser()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let d = "25/12/2017"
@@ -157,7 +158,7 @@ class EventsTableController: ViewControllerWithLongTap,UITableViewDelegate,UITab
         self.eventsTableView.reloadData()
     }
     
-    
+ 
     // MARK Navigation
     
     @IBAction func prepareForUnwind(_ sender: UIStoryboardSegue) {

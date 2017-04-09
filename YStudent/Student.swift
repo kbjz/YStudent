@@ -14,7 +14,11 @@ import UIKit
     case Female
     case null
 }
-
+enum Contract : String {
+    case pro = "Contrat de professionalisation"
+    case intern = "Stage"
+    case apprentissage = " Contrat d'apprentissage"
+}
 enum LevelWanted : String {
     case bachelor = "Bachelor"
     case master = "Mastère"
@@ -43,6 +47,9 @@ enum ProgramWanted : String {
     case initial
     case alternance
 }
+
+
+
 @objc enum SocialNetwork: Int {
     case facebook
     case linkedIn
@@ -52,28 +59,31 @@ enum ProgramWanted : String {
 class Student : Object {
     
     // realm object
-    
-    
-    
-    
     dynamic var lastName : String   = "Doe"
     dynamic var firstName : String  = "John"
     dynamic var birthdate : Date    = Date()
+    dynamic var isAlreadyInContract : Bool = false
+    var contractType : Contract?
+    dynamic var entrepriseName = ""
     //var gender : Gender
     dynamic var mail : String       = "doe@mail.com"
     dynamic var address : String    = "12 rue doe"
     dynamic var phone : Int         = 0676456345
     dynamic var picture : String    = "url/picture"
     dynamic var actualSchool : String = "baccaluareat"
-   // var cursusWanted : Cursus
-   // var schoolWanted : Campus
-    //var levelWanted : LevelWanted
+    var cursusWanted : Cursus?
+    var schoolWanted : Campus?
+    var levelWanted : LevelWanted?
+    var programWanted : ProgramWanted?
     dynamic var experience : String = " 3 stages "
     dynamic var cv : String = "url"
     dynamic var beginningDate : Date = Date()
-    //   dynamic var skill : RLMArray   = ["swift","php","oracle"]
-    //dynamic var socialAdresses : [SocialNetwork : String]
     dynamic var course : CourseType = CourseType.alternance
+    //realm
+    dynamic var cursusWantedString = ""
+    dynamic var levelWantedString = ""
+    dynamic var schoolWantedString = ""
+    dynamic var programWantedString = ""
     // TO DO
     // parentsName
     // parentPhone
@@ -81,6 +91,9 @@ class Student : Object {
     
     public required init() {
         super.init()
+        
+        //realm
+        
         self.lastName = "Doe"
         self.firstName = "John"
         self.birthdate = Date()
@@ -90,8 +103,8 @@ class Student : Object {
         self.phone = 11111111
         self.picture = "/nopicture"
         self.actualSchool = "IUT Whatever"
-        // self.cursusWanted = Cursus.null
-        // self.schoolWanted = Campus.null
+        self.cursusWanted = Cursus.null
+        self.schoolWanted = Campus.null
         self.experience = "lorem ipsum"
         self.cv = "whatever.pdf"
         self.beginningDate = Date()

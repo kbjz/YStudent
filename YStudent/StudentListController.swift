@@ -9,7 +9,7 @@
 import UIKit
 import ChameleonFramework
 
-class StudentListController: ViewControllerWithLongTap,UITableViewDelegate,UITableViewDataSource {
+class StudentListController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var studentsTableView: UITableView!
     let model = StudentManager.sharedInstance

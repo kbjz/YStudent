@@ -18,7 +18,7 @@ enum State {
 }
 
 
-class AddEventController: ViewControllerWithLongTap ,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+class AddEventController: UIViewController ,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = UIColor.ynovGreen

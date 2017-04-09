@@ -92,7 +92,7 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
                 case LevelWanted.postBac:
                     return 3
                 default:
-                    print("lvl not found ")
+                    print("default")
                 }
             }
         default:
@@ -174,7 +174,7 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
                     }
                 case LevelWanted.master:
                     if let school = StudentManager.sharedInstance.selectedSchool {
-                       
+                        
                         switch school  {
                         case .isee :
                             cell.bottomLabel.text = StudentManager.sharedInstance.programsIseeM[indexPath.row].rawValue
@@ -195,9 +195,10 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
                 case LevelWanted.postBac:
                     cell.bottomLabel.text = StudentManager.sharedInstance.programsEicar[indexPath.row].rawValue
                     return cell
-                default:
-                    print("default ")
-                }
+                case LevelWanted.postBac2:
+                    break
+                case LevelWanted.postBac3:
+                    break                }
             }
         default:
             break
@@ -229,7 +230,7 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
                 self.levelCollectionView.reloadData()
             }
         case 1:
-           
+            
             self.nextStepBt.isHidden = true
             self.nextStepBt.isUserInteractionEnabled = false
             if let cell = collectionView.cellForItem(at: indexPath) {
@@ -246,7 +247,13 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
                     StudentManager.sharedInstance.selectedLevel = LevelWanted(rawValue: StudentManager.sharedInstance.bachelorMastereManaa[indexPath.row])
                 }
                 if school == Cursus.eicar {
-                    StudentManager.sharedInstance.selectedLevel = LevelWanted(rawValue: StudentManager.sharedInstance.postBac[indexPath.row])                }
+                    StudentManager.sharedInstance.selectedLevel = LevelWanted(rawValue: StudentManager.sharedInstance.postBac[indexPath.row])
+                    if StudentManager.sharedInstance.selectedLevel == LevelWanted.postBac2 || StudentManager.sharedInstance.selectedLevel == LevelWanted.postBac3 {
+                        self.nextStepBt.isHidden = false
+                        self.nextStepBt.isUserInteractionEnabled = true
+                    }
+                }
+                
             }
             self.programCollectionView.isHidden = false
             self.programCollectionView.isUserInteractionEnabled = true
@@ -255,7 +262,7 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
             
             if let cell = collectionView.cellForItem(at: indexPath) {
                 let cellTyped = collectionView.cellForItem(at: indexPath) as! ProgramCell
-                cellTyped.handleColorForDeselectState()
+                cellTyped.handleColorForSelectState()
                 cell.handleColorForSelection()
                 self.nextStepBt.isHidden = false
                 self.nextStepBt.isUserInteractionEnabled = true
@@ -282,11 +289,8 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
             
         }
         if collectionView.tag == 2 {
-             let cellTyped = collectionView.cellForItem(at: indexPath) as! ProgramCell
+            let cellTyped = collectionView.cellForItem(at: indexPath) as! ProgramCell
             cellTyped.handleColorForDeselectState()
-            self.programCollectionView.isUserInteractionEnabled = false
-            self.programCollectionView.isHidden = true
-            
         }
         
         if let cell = collectionView.cellForItem(at: indexPath) {
@@ -305,7 +309,9 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
     
     @IBAction func nextStepTapped(_ sender: Any) {
         // update creating User
-        //StudentManager.sharedInstance.creatingStudent?.schoolWanted =
+        StudentManager.sharedInstance.creatingStudent?.cursusWanted = StudentManager.sharedInstance.selectedSchool
+        StudentManager.sharedInstance.creatingStudent?.levelWanted = StudentManager.sharedInstance.selectedLevel
+        StudentManager.sharedInstance.creatingStudent?.programWanted = StudentManager.sharedInstance.selectedProgram
         // save Realm
         
     }
@@ -325,22 +331,27 @@ extension UICollectionViewCell {
 extension UICollectionView {
     
     func deselectAllItems(animated: Bool = false) {
-      
+        
         for indexPath in self.indexPathsForSelectedItems ?? [] {
             self.deselectItem(at: indexPath, animated: animated)
-            if self.tag == 1 {
-                let cellTyped = self.cellForItem(at: indexPath) as! LevelCell
-                cellTyped.handleColorForDeselectState()
-            }
-            if self.tag == 2 {
-                let cellTyped = self.cellForItem(at: indexPath) as! ProgramCell
-                cellTyped.handleColorForDeselectState()
-            }
             if let cell = self.cellForItem(at: indexPath) {
                 cell.layer.borderColor = UIColor.ynovPink.cgColor
                 cell.layer.backgroundColor = UIColor.clear.cgColor
             }
+            if let cell = self.cellForItem(at: indexPath) as? contractCell {
+                cell.titleContract.textColor = UIColor.flatBlack
+            }
+            if let cell = self.cellForItem(at: indexPath) as? binaryCell {
+                cell.titleLb.textColor = UIColor.flatBlack
+            }
+            if let cell = self.cellForItem(at: indexPath) as? LevelCell {
+                cell.title.textColor = UIColor.flatBlack
+            }
+            if let cell = self.cellForItem(at: indexPath) as? ProgramCell {
+                cell.bottomLabel.textColor = UIColor.flatBlack
+            }
         }
+        self.reloadData()
     }
 }
 
@@ -361,7 +372,7 @@ class LevelCell : UICollectionViewCell {
 
 class ProgramCell : UICollectionViewCell {
     
- 
+    
     @IBOutlet weak var bottomLabel: UILabel!
     func handleColorForSelectState() {
         

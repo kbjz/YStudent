@@ -15,6 +15,7 @@ class StudentManager: NSObject {
     var listOfStudents = {
         RealmManager.sharedInstance.getListOfStudents()
     }
+    let contracts = [Contract.intern,Contract.pro,Contract.apprentissage]
     let programsIseeB = [ProgramWanted.bComm,ProgramWanted.bMarket]
     let programsIseeM = [ProgramWanted.mManagement]
     let programsIngesupB = [ProgramWanted.bSI]
@@ -28,6 +29,11 @@ class StudentManager: NSObject {
     var selectedSchool : Cursus?
     var selectedLevel : LevelWanted?
     var selectedProgram : ProgramWanted?
+    let yesNo = ["OUI","NON"]
+    
+    var hasEntreprise : Bool?
+    var contractSelected : Contract?
+    var entrepriseName : String?
     
     var bachelorMastere  = [LevelWanted.bachelor.rawValue,LevelWanted.master.rawValue]
     var bachelorMastereManaa  = [LevelWanted.bachelor.rawValue,LevelWanted.master.rawValue,LevelWanted.manaa.rawValue]

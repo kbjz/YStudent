@@ -33,6 +33,8 @@
 		0A84F5311E449BA400E1AE36 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A84F5301E449BA400E1AE36 /* Event.swift */; };
 		0A957E001E474E7C00AE4A97 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A957DFF1E474E7C00AE4A97 /* EventCell.xib */; };
 		0A957E021E474EE900AE4A97 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A957E011E474EE900AE4A97 /* EventCell.swift */; };
+		0A95854F1E9A415A009859CC /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A95854E1E9A415A009859CC /* CustomNavigationController.swift */; };
+		0A9585511E9A5BAA009859CC /* EntrepriseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9585501E9A5BA9009859CC /* EntrepriseController.swift */; };
 		0AA2E1F31E544C6500061516 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2E1F21E544C6500061516 /* EventManager.swift */; };
 		0AA2E1F51E5453F300061516 /* SkyFloatingLabelTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA2E1F41E5453F300061516 /* SkyFloatingLabelTextField.framework */; };
 		0AA2E1F71E54578A00061516 /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA2E1F61E54578A00061516 /* TextFieldEffects.framework */; };
@@ -45,7 +47,6 @@
 		0AB91E1E1E5F1D25004126F5 /* FoldingCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3E9E991E47527800066FE4 /* FoldingCell.framework */; };
 		0AB91E221E5F257A004126F5 /* EventsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB91E211E5F257A004126F5 /* EventsTableController.swift */; };
 		0AC654751E60A9A500D31D43 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC654741E60A9A500D31D43 /* PopoverController.swift */; };
-		0AF0D68A1E7AA73B0055CC7F /* ViewControllerWithLongTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF0D6891E7AA73B0055CC7F /* ViewControllerWithLongTap.swift */; };
 		411893954DB40908A1490078 /* Pods_YStudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B116BD4C2954DE3B2A893DB5 /* Pods_YStudent.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,8 @@
 		0A84F5301E449BA400E1AE36 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0A957DFF1E474E7C00AE4A97 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		0A957E011E474EE900AE4A97 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		0A95854E1E9A415A009859CC /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		0A9585501E9A5BA9009859CC /* EntrepriseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntrepriseController.swift; sourceTree = "<group>"; };
 		0AA2E1F21E544C6500061516 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		0AA2E1F41E5453F300061516 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyFloatingLabelTextField.framework; path = Carthage/Build/iOS/SkyFloatingLabelTextField.framework; sourceTree = "<group>"; };
 		0AA2E1F61E54578A00061516 /* TextFieldEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextFieldEffects.framework; path = Carthage/Build/iOS/TextFieldEffects.framework; sourceTree = "<group>"; };
@@ -112,7 +115,6 @@
 		0AA5C61B1E60404C00C8E8A4 /* DateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		0AB91E211E5F257A004126F5 /* EventsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableController.swift; sourceTree = "<group>"; };
 		0AC654741E60A9A500D31D43 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
-		0AF0D6891E7AA73B0055CC7F /* ViewControllerWithLongTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerWithLongTap.swift; sourceTree = "<group>"; };
 		4CF86FE4A7143BDE07AC9086 /* Pods-YStudent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YStudent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YStudent/Pods-YStudent.debug.xcconfig"; sourceTree = "<group>"; };
 		B116BD4C2954DE3B2A893DB5 /* Pods_YStudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YStudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFFEDC36C5C69D02C18B04D3 /* Pods-YStudent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YStudent.release.xcconfig"; path = "Pods/Target Support Files/Pods-YStudent/Pods-YStudent.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,9 +266,9 @@
 				0A686A331E670503009841BB /* StudentCell.swift */,
 				0A686A351E6711C9009841BB /* StudentListController.swift */,
 				0A7601D01E7952D7002E130D /* StudentCivilityController.swift */,
-				0AF0D6891E7AA73B0055CC7F /* ViewControllerWithLongTap.swift */,
 				0A5022381E7C7F7500745D9C /* TreeViewController.swift */,
 				0A08BA3F1E9796D8003A0506 /* ChooseSchoolController.swift */,
+				0A9585501E9A5BA9009859CC /* EntrepriseController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -274,6 +276,7 @@
 		0AA5ACF71E44BBDE009F5825 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0A95854E1E9A415A009859CC /* CustomNavigationController.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -499,13 +502,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9585511E9A5BAA009859CC /* EntrepriseController.swift in Sources */,
 				0A08BA401E9796D8003A0506 /* ChooseSchoolController.swift in Sources */,
 				0A08BA441E97A305003A0506 /* SchoolCollectionCell.swift in Sources */,
 				0A84F52F1E449B6900E1AE36 /* YnovUser.swift in Sources */,
 				0A686A381E6713D3009841BB /* StudentManager.swift in Sources */,
 				0A7601D11E7952D7002E130D /* StudentCivilityController.swift in Sources */,
 				0AC654751E60A9A500D31D43 /* PopoverController.swift in Sources */,
-				0AF0D68A1E7AA73B0055CC7F /* ViewControllerWithLongTap.swift in Sources */,
+				0A95854F1E9A415A009859CC /* CustomNavigationController.swift in Sources */,
 				0A5022391E7C7F7500745D9C /* TreeViewController.swift in Sources */,
 				0A5022371E7C713700745D9C /* RealmManager.swift in Sources */,
 				0AA2E1F31E544C6500061516 /* EventManager.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import ToastSwiftFramework
-class StudentCivilityController: ViewControllerWithLongTap ,UITextFieldDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class StudentCivilityController: UIViewController ,UITextFieldDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     
     @IBOutlet weak var cityTf: UITextField!
@@ -180,7 +180,7 @@ class StudentCivilityController: ViewControllerWithLongTap ,UITextFieldDelegate,
         StudentManager.sharedInstance.creatingStudent = user
         
         // store in realm 
-        RealmManager.sharedInstance.store(s:user)
+        //RealmManager.sharedInstance.store(s:user)
     
         
     }

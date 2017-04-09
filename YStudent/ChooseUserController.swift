@@ -14,7 +14,7 @@ extension UIColor {
 }
 
 
-class ChooseUserController: UIViewController,UIGestureRecognizerDelegate{
+class ChooseUserController: UIViewController{
     
     
     @IBOutlet weak var ynovView: UIView!
@@ -23,6 +23,8 @@ class ChooseUserController: UIViewController,UIGestureRecognizerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
+       
+      
     }
     
     func initialize() {
@@ -47,15 +49,23 @@ class ChooseUserController: UIViewController,UIGestureRecognizerDelegate{
     func handleTapProspect(sender: UITapGestureRecognizer? = nil) {
         self.performSegue(withIdentifier: "showStudentMode", sender: self)
     }
+    
+    @IBAction func prepareForUnwindToInitial(segue: UIStoryboardSegue){
+        
+    }
 }
 
-extension UIViewController {
+extension UIViewController : UIGestureRecognizerDelegate {
     func addGestureToChangeUser() {
-        let tap = UILongPressGestureRecognizer(target: self.view, action: #selector(UIViewController.handleLongTap))
+        let tap = UILongPressGestureRecognizer(target: self, action: #selector(handleLongTap(sender:)))
+        guard let timeTap = CFTimeInterval(exactly: 3.0) else {return}
+        tap.numberOfTouchesRequired = 2
+        tap.minimumPressDuration = timeTap
+        tap.delegate = self
         self.view.addGestureRecognizer(tap)
     }
-    func handleLongTap() {
-        self.navigationController?.popToRootViewController(animated: true)
+    func handleLongTap(sender: UILongPressGestureRecognizer? = nil) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "backToInitial"), object: nil)
     }
 }
- 
+

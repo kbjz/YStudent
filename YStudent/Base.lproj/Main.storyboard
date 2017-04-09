@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5F0-a4-QtR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s8b-n8-2zA">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Choose User Controller-->
         <scene sceneID="fJJ-p1-hb6">
             <objects>
-                <viewController id="5F0-a4-QtR" customClass="ChooseUserController" customModule="YStudent" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="initialVC" id="5F0-a4-QtR" customClass="ChooseUserController" customModule="YStudent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AxE-h0-Pye"/>
                         <viewControllerLayoutGuide type="bottom" id="iIU-ad-dIg"/>
@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3o-YA-9dU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="209" y="-19"/>
+            <point key="canvasLocation" x="974.21875" y="-19.3359375"/>
         </scene>
         <!--Tree View Controller-->
         <scene sceneID="Y5h-sU-dzA">
@@ -107,12 +107,24 @@
                                     <segue destination="jqJ-GZ-3zH" kind="show" id="0gJ-sv-qMa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Olb-dA-SgS">
+                                <rect key="frame" x="333" y="787" width="190" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Entreprise"/>
+                                <connections>
+                                    <segue destination="u4b-ul-rxr" kind="show" id="TC7-Mj-xoo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="qQK-le-ETV"/>
+                    <connections>
+                        <segue destination="73R-SQ-Kkx" kind="unwind" identifier="initialSegue" unwindAction="prepareForUnwindToInitialWithSegue:" id="kGM-bS-O8l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASJ-ad-Q4N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="73R-SQ-Kkx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1391.40625" y="740.625"/>
         </scene>
@@ -203,6 +215,7 @@
                                 </state>
                                 <connections>
                                     <action selector="nextStepTapped:" destination="Vge-Gi-loS" eventType="touchUpInside" id="IRN-9j-iQZ"/>
+                                    <segue destination="vXR-yH-nBe" kind="unwind" unwindAction="prepareForUnwind:" id="44T-Xf-DrB"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WNP-b0-tR6">
@@ -224,7 +237,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9i-pT-ppK">
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -265,11 +278,13 @@
                         <outlet property="levelCollectionView" destination="m09-d4-KOX" id="3T6-Fs-mIy"/>
                         <outlet property="nextStepBt" destination="rIK-iE-T2D" id="pRo-kY-0ic"/>
                         <outlet property="programCollectionView" destination="WNP-b0-tR6" id="dzU-Ud-Oro"/>
+                        <segue destination="vXR-yH-nBe" kind="unwind" identifier="initialSegue" unwindAction="prepareForUnwindToInitialWithSegue:" id="8lJ-v5-1eL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIH-UE-mMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vXR-yH-nBe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1802.34375" y="1584.9609375"/>
+            <point key="canvasLocation" x="4236" y="2413"/>
         </scene>
         <!--Civilité-->
         <scene sceneID="AIu-Sa-ydb">
@@ -429,12 +444,13 @@
                         <outlet property="picture" destination="fj6-lq-ZMp" id="1fV-Lz-BFK"/>
                         <outlet property="postalAdressTf" destination="PRH-M1-X4s" id="i1s-re-sYF"/>
                         <outlet property="postalCode" destination="yVr-TB-Sfr" id="X07-to-BFg"/>
+                        <segue destination="gqV-cp-mUE" kind="unwind" identifier="initialSegue" unwindAction="prepareForUnwindToInitialWithSegue:" id="XUP-eW-5Rt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dor-Mo-4Y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gqV-cp-mUE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3571.09375" y="1334.765625"/>
+            <point key="canvasLocation" x="3638" y="1028"/>
         </scene>
         <!--Visualiser contacts existants-->
         <scene sceneID="XUX-fu-lcw">
@@ -464,11 +480,13 @@
                     <navigationItem key="navigationItem" title="Visualiser contacts existants" id="Pzl-Gh-y6Q"/>
                     <connections>
                         <outlet property="studentsTableView" destination="7sb-Yu-4hm" id="IfF-CY-kVg"/>
+                        <segue destination="nc0-ic-29z" kind="unwind" identifier="initialSegue" unwindAction="prepareForUnwindToInitialWithSegue:" id="aSg-4h-B9Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3M-qb-Vcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="nc0-ic-29z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3387.5" y="366.796875"/>
+            <point key="canvasLocation" x="4153.125" y="366.796875"/>
         </scene>
         <!--Evenements-->
         <scene sceneID="WFL-n3-W1u">
@@ -509,11 +527,13 @@
                         <segue destination="VN7-BW-hDh" kind="popoverPresentation" identifier="goToPopover" popoverAnchorView="HNY-Si-Ph9" id="ccG-en-jCK">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
+                        <segue destination="cC5-Wo-i0T" kind="unwind" identifier="initialSegue" unwindAction="prepareForUnwindToInitialWithSegue:" id="Z84-na-wdJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5i-kk-3P4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cC5-Wo-i0T" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2965" y="-382"/>
+            <point key="canvasLocation" x="3730.46875" y="-382.03125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ukc-6T-1dh">
@@ -531,7 +551,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8JN-7p-lLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="-401"/>
+            <point key="canvasLocation" x="1763.28125" y="-401.3671875"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Dux-1j-OxR">
@@ -550,7 +570,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijZ-Iz-e9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1867" y="-918"/>
+            <point key="canvasLocation" x="2491" y="-1413"/>
         </scene>
         <!--Ajouter Evenement-->
         <scene sceneID="4OG-U6-uQs">
@@ -698,12 +718,13 @@
                         <outlet property="tableFrame" destination="psL-UV-fJd" id="ME5-0t-wL2"/>
                         <outlet property="topConstraintTableFrame" destination="t8d-ZB-xlg" id="p9t-a1-3iH"/>
                         <outlet property="validateEventBt" destination="zEF-Kf-VJR" id="ucR-zM-hAG"/>
+                        <segue destination="Yg2-L6-EME" kind="unwind" identifier="initialSegue" unwindAction="prepareForUnwindToInitialWithSegue:" id="fhN-GG-dFE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6k-oZ-UQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Yg2-L6-EME" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4404" y="-643"/>
+            <point key="canvasLocation" x="5169.53125" y="-643.359375"/>
         </scene>
         <!--Popover Controller-->
         <scene sceneID="1IY-Js-cgU">
@@ -764,7 +785,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="094-cY-z1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4482" y="71"/>
+            <point key="canvasLocation" x="5246.875" y="70.8984375"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="2UP-fi-CzS">
@@ -783,7 +804,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghI-vv-42r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2520.3125" y="297.65625"/>
+            <point key="canvasLocation" x="3285.9375" y="297.65625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tlw-qK-21b">
@@ -821,6 +842,159 @@
             </objects>
             <point key="canvasLocation" x="2820.3125" y="1027.734375"/>
         </scene>
+        <!--Entreprise-->
+        <scene sceneID="PHo-zD-sfd">
+            <objects>
+                <viewController id="C1F-8i-5oU" customClass="EntrepriseController" customModule="YStudent" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XI5-ua-vou"/>
+                        <viewControllerLayoutGuide type="bottom" id="gBJ-wp-2D8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hep-rS-uP9">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tXA-jU-1wc">
+                                <rect key="frame" x="77" y="256" width="614" height="205"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aOB-mK-gIT">
+                                    <size key="itemSize" width="222" height="106"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="binaryCell" id="xhj-Pn-5ff" customClass="binaryCell" customModule="YStudent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="222" height="106"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="222" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOj-2V-rIF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="222" height="106"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="42"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="nOj-2V-rIF" firstAttribute="top" secondItem="xhj-Pn-5ff" secondAttribute="top" id="0oA-SL-hI4"/>
+                                            <constraint firstItem="nOj-2V-rIF" firstAttribute="leading" secondItem="xhj-Pn-5ff" secondAttribute="leading" id="AJL-gR-bmG"/>
+                                            <constraint firstAttribute="bottom" secondItem="nOj-2V-rIF" secondAttribute="bottom" id="ci2-DF-IKQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="nOj-2V-rIF" secondAttribute="trailing" id="vHD-ty-3Pl"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="titleLb" destination="nOj-2V-rIF" id="u23-os-mbD"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eUe-je-Sxh">
+                                <rect key="frame" x="77" y="507" width="614" height="266.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GsM-Zq-eLW">
+                                    <size key="itemSize" width="297" height="106"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="contractCell" id="Gkn-in-hNy" customClass="contractCell" customModule="YStudent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="297" height="106"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="297" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contrat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipz-9x-79a">
+                                                    <rect key="frame" x="0.0" y="0.0" width="297" height="106"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Ipz-9x-79a" secondAttribute="bottom" id="FqD-u7-4Cj"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ipz-9x-79a" secondAttribute="trailing" id="h9I-yr-5WV"/>
+                                            <constraint firstItem="Ipz-9x-79a" firstAttribute="top" secondItem="Gkn-in-hNy" secondAttribute="top" id="lCR-ob-2jt"/>
+                                            <constraint firstItem="Ipz-9x-79a" firstAttribute="leading" secondItem="Gkn-in-hNy" secondAttribute="leading" id="u6H-9M-xJx"/>
+                                        </constraints>
+                                        <size key="customSize" width="297" height="106"/>
+                                        <connections>
+                                            <outlet property="titleContract" destination="Ipz-9x-79a" id="sT4-CZ-z0i"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etes-vous actuellement en contrat ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SE-Vi-pHy">
+                                <rect key="frame" x="77" y="192" width="614" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Foz-Lk-G8E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nom de l'entreprise" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jp3-ie-86l">
+                                <rect key="frame" x="77" y="781" width="614" height="52"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juy-Ui-dYe">
+                                <rect key="frame" x="234" y="904" width="300" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="p0i-f6-B8R"/>
+                                    <constraint firstAttribute="height" constant="80" id="qTJ-yZ-Dyn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
+                                <state key="normal" title="Etape suivante">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextStepTapped:" destination="C1F-8i-5oU" eventType="touchUpInside" id="kkY-dd-lMY"/>
+                                    <action selector="nextStepTapped:" destination="Vge-Gi-loS" eventType="touchUpInside" id="qM2-oj-RBE"/>
+                                    <segue destination="f3V-g4-VVk" kind="unwind" unwindAction="prepareForUnwind:" id="pAW-65-5nE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tXA-jU-1wc" firstAttribute="width" secondItem="hep-rS-uP9" secondAttribute="width" multiplier="4:5" id="25D-De-FVI"/>
+                            <constraint firstItem="tXA-jU-1wc" firstAttribute="centerX" secondItem="hep-rS-uP9" secondAttribute="centerX" id="33x-4A-Pz0"/>
+                            <constraint firstItem="3SE-Vi-pHy" firstAttribute="centerX" secondItem="hep-rS-uP9" secondAttribute="centerX" id="Adw-fY-0Rs"/>
+                            <constraint firstItem="eUe-je-Sxh" firstAttribute="width" secondItem="tXA-jU-1wc" secondAttribute="width" id="DA8-hY-LPO"/>
+                            <constraint firstItem="Jp3-ie-86l" firstAttribute="centerX" secondItem="hep-rS-uP9" secondAttribute="centerX" id="IjJ-aG-JKv"/>
+                            <constraint firstItem="tXA-jU-1wc" firstAttribute="height" secondItem="hep-rS-uP9" secondAttribute="height" multiplier="0.2" id="OBv-J1-N0N"/>
+                            <constraint firstItem="eUe-je-Sxh" firstAttribute="centerX" secondItem="hep-rS-uP9" secondAttribute="centerX" id="RyH-dz-hoQ"/>
+                            <constraint firstItem="tXA-jU-1wc" firstAttribute="top" secondItem="3SE-Vi-pHy" secondAttribute="bottom" constant="24" id="SEg-3O-521"/>
+                            <constraint firstItem="eUe-je-Sxh" firstAttribute="height" secondItem="tXA-jU-1wc" secondAttribute="height" multiplier="1.3" id="Xfu-ZA-nXV"/>
+                            <constraint firstItem="3SE-Vi-pHy" firstAttribute="width" secondItem="hep-rS-uP9" secondAttribute="width" multiplier="4:5" id="g44-CY-Slt"/>
+                            <constraint firstItem="tXA-jU-1wc" firstAttribute="centerY" secondItem="hep-rS-uP9" secondAttribute="centerY" multiplier="0.7" id="lnZ-Bv-OTI"/>
+                            <constraint firstItem="gBJ-wp-2D8" firstAttribute="top" secondItem="juy-Ui-dYe" secondAttribute="bottom" constant="40" id="lpy-i6-ILT"/>
+                            <constraint firstItem="Jp3-ie-86l" firstAttribute="top" secondItem="eUe-je-Sxh" secondAttribute="bottom" constant="7.5" id="mtT-12-8Cj"/>
+                            <constraint firstItem="eUe-je-Sxh" firstAttribute="centerY" secondItem="hep-rS-uP9" secondAttribute="centerY" multiplier="1.25" id="pOQ-r2-Bb1"/>
+                            <constraint firstItem="Jp3-ie-86l" firstAttribute="width" secondItem="3SE-Vi-pHy" secondAttribute="width" id="rId-AK-3PJ"/>
+                            <constraint firstItem="Jp3-ie-86l" firstAttribute="height" secondItem="3SE-Vi-pHy" secondAttribute="height" multiplier="1.3" id="v7H-dU-8vR"/>
+                            <constraint firstItem="juy-Ui-dYe" firstAttribute="centerX" secondItem="hep-rS-uP9" secondAttribute="centerX" id="vQs-uX-afw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Entreprise" id="eJs-Hu-5Kn"/>
+                    <connections>
+                        <outlet property="contractCollectionView" destination="eUe-je-Sxh" id="f34-fT-m6y"/>
+                        <outlet property="entrepriseNameTf" destination="Jp3-ie-86l" id="5uH-fv-SMK"/>
+                        <outlet property="nextStepBt" destination="juy-Ui-dYe" id="BDP-gI-jCj"/>
+                        <outlet property="yesNoCollectionView" destination="tXA-jU-1wc" id="Eo6-xd-Yni"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pg3-G1-pQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="f3V-g4-VVk" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1609.375" y="2596.875"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="iUp-d9-5n9">
             <objects>
@@ -837,7 +1011,43 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkt-Vb-klV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036.71875" y="1584.9609375"/>
+            <point key="canvasLocation" x="2989" y="2413"/>
+        </scene>
+        <!--Custom Navigation Controller-->
+        <scene sceneID="CI5-M8-JRi">
+            <objects>
+                <navigationController storyboardIdentifier="initialNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="s8b-n8-2zA" customClass="CustomNavigationController" customModule="YStudent" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0gx-RR-fMM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5F0-a4-QtR" kind="relationship" relationship="rootViewController" id="B30-7p-LQw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AKg-sG-K1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208.59375" y="-19.3359375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JXy-DT-v0W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u4b-ul-rxr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1bi-w3-I6y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="C1F-8i-5oU" kind="relationship" relationship="rootViewController" id="NTh-Ph-shB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ssC-pg-BAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="1770"/>
         </scene>
     </scenes>
     <resources>
