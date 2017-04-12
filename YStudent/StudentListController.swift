@@ -14,6 +14,14 @@ class StudentListController: UIViewController,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var studentsTableView: UITableView!
     let model = StudentManager.sharedInstance
     
+    override func handleLongTap(sender: UILongPressGestureRecognizer?) {
+        self.dismiss(animated: true) {
+            self.tabBarController?.navigationController?.popToRootViewController(animated: false)
+        }
+        
+    }
+ 
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = UIColor.ynovGreen
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,NSFontAttributeName:UIFont(name:"HelveticaNeue-Light",size:30) as Any]
@@ -22,7 +30,7 @@ class StudentListController: UIViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialize()
-        
+        self.addGestureToChangeUser()
         self.studentsTableView.reloadData()
     }
     

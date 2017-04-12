@@ -34,6 +34,7 @@ class StudentCivilityController: UIViewController ,UITextFieldDelegate, UIImageP
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addGestureToChangeUser()
         IQKeyboardManager.sharedManager().enable = true
         self.initialize()
         self.initializeDatePicker()

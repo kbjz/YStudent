@@ -65,7 +65,8 @@ extension UIViewController : UIGestureRecognizerDelegate {
         self.view.addGestureRecognizer(tap)
     }
     func handleLongTap(sender: UILongPressGestureRecognizer? = nil) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "backToInitial"), object: nil)
+        self.navigationController?.popToRootViewController(animated: false)
     }
+ 
 }
 

@@ -19,13 +19,27 @@ class EventsTableController: UIViewController,UITableViewDelegate,UITableViewDat
     
     @IBOutlet weak var eventsTableView: UITableView!
     var eventState = EventState.toAdd
+    
+    override func handleLongTap(sender: UILongPressGestureRecognizer?) {
+        NotificationCenter.default.removeObserver(self,
+                                                            name: NSNotification.Name.UIContentSizeCategoryDidChange,
+                                                            object: nil)
+    self.navigationController?.popToRootViewController(animated: false)
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.addGestureToChangeUser()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = UIColor.ynovGreen
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,NSFontAttributeName:UIFont(name:"HelveticaNeue-Light",size:30) as Any]
         self.eventsTableView.reloadData()
     }
     func initialize() {
-        self.addGestureToChangeUser()
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let d = "25/12/2017"

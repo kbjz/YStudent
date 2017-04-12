@@ -11,20 +11,13 @@ import UIKit
 class CustomNavigationController: UINavigationController {
     
     override func viewDidAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleBackToInitial(sender:)), name: NSNotification.Name(rawValue: "backToInitial"), object: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
-    
-    func handleBackToInitial(sender : Notification) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "initialVC") {
-            self.pushViewController(vc, animated: false)
-            
-        }
-    }
+   
     
     
     override func didReceiveMemoryWarning() {
