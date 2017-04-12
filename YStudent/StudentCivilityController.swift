@@ -34,10 +34,24 @@ class StudentCivilityController: UIViewController ,UITextFieldDelegate, UIImageP
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addGestureToChangeUser()
+        self.checkDataForFilling()
+        
         IQKeyboardManager.sharedManager().enable = true
         self.initialize()
         self.initializeDatePicker()
+    }
+    
+    func checkDataForFilling() {
+        if let s = StudentManager.sharedInstance.creatingStudent {
+            self.cityTf.text = s.city
+            self.postalAdressTf.text = s.address
+            self.postalCode.text = s.postalCode
+            self.firstNameTf.text = s.firstName
+            self.lastNameTf.text = s.lastName
+            self.birthdateTf.text = String(describing: s.birthdate)
+            self.mailTf.text = s.mail
+            self.phoneTf.text = String(s.phone)
+        }
     }
     
     func initialize() {
@@ -82,39 +96,10 @@ class StudentCivilityController: UIViewController ,UITextFieldDelegate, UIImageP
         self.view.bringSubview(toFront: self.nextStepButton)
         
         // tap gesture picture
-        //add tap reco
-        let tapPicture = UITapGestureRecognizer(target: self, action: #selector(handleTapPicture(sender:)))
-        tapPicture.delegate = self
-        self.picture.addGestureRecognizer(tapPicture)
-        
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker =  UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-        }
         
         
     }
-    
-    func handleTapPicture(sender: UITapGestureRecognizer? = nil) {
-        //camera
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            self.present(imagePicker, animated: true, completion: nil)
-        } else {
-            self.view.makeToast("Caméra non disponible", duration: 1.0, position: .bottom)
-        }
-        
-    }
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]){
-        imagePicker.dismiss(animated: true, completion: nil)
-        self.picture.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        imagePicker.dismiss(animated: true, completion: nil)
-    }
-    
+
     // TO DO externalise to ViewControllerWithLongTap ??
     //MARK Date Picker
     
@@ -159,7 +144,7 @@ class StudentCivilityController: UIViewController ,UITextFieldDelegate, UIImageP
     @IBAction func nextStepTapped(_ sender: Any) {
         if self.firstNameTf.text == "" || self.lastNameTf.text == "" || self.mailTf.text == "" || self.birthdateTf.text == "" || self.postalAdressTf.text == "" || self.phoneTf.text == "" {
             self.view.makeToast("Veuillez remplir tous les champs", duration: 2.0, position: .bottom)
-            return
+            //return
         }
         
         // check TextField
@@ -168,6 +153,9 @@ class StudentCivilityController: UIViewController ,UITextFieldDelegate, UIImageP
         guard let mail = self.mailTf.text else {return}
         guard let phone = Int(self.phoneTf.text!) else {return}
         guard let date = self.birthdateTf.text?.toDate() else {return}
+        guard let addr = self.postalAdressTf.text else {return}
+        guard let postalCode = self.postalCode.text else {return}
+        guard let city = self.cityTf.text else {return}
         
         //création User
         let user = Student()
@@ -176,6 +164,9 @@ class StudentCivilityController: UIViewController ,UITextFieldDelegate, UIImageP
         user.birthdate = date
         user.mail = mail
         user.phone = phone
+        user.address = addr
+        user.city = city
+        user.postalCode = postalCode
         
         // store in manager
         StudentManager.sharedInstance.creatingStudent = user

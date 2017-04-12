@@ -62,6 +62,8 @@ class Student : Object {
     dynamic var lastName : String   = "Doe"
     dynamic var firstName : String  = "John"
     dynamic var birthdate : Date    = Date()
+    dynamic var city :String?
+    dynamic var postalCode : String?
     dynamic var isAlreadyInContract : Bool = false
     var contractType : Contract?
     dynamic var entrepriseName = ""

@@ -14,7 +14,7 @@ extension UIColor {
 }
 
 
-class ChooseUserController: UIViewController{
+class ChooseUserController: UIViewController , UIGestureRecognizerDelegate{
     
     
     @IBOutlet weak var ynovView: UIView!
@@ -55,18 +55,5 @@ class ChooseUserController: UIViewController{
     }
 }
 
-extension UIViewController : UIGestureRecognizerDelegate {
-    func addGestureToChangeUser() {
-        let tap = UILongPressGestureRecognizer(target: self, action: #selector(handleLongTap(sender:)))
-        guard let timeTap = CFTimeInterval(exactly: 3.0) else {return}
-        tap.numberOfTouchesRequired = 2
-        tap.minimumPressDuration = timeTap
-        tap.delegate = self
-        self.view.addGestureRecognizer(tap)
-    }
-    func handleLongTap(sender: UILongPressGestureRecognizer? = nil) {
-        self.navigationController?.popToRootViewController(animated: false)
-    }
- 
-}
+
 

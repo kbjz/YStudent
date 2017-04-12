@@ -16,7 +16,7 @@ class EntrepriseController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        navigationController?.navigationBar.barTintColor = UIColor.ynovGreen
+        navigationController?.navigationBar.barTintColor = UIColor.ynovPink
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,NSFontAttributeName:UIFont(name:"HelveticaNeue-Light",size:30) as Any]
         
     }
@@ -59,10 +59,7 @@ class EntrepriseController: UIViewController {
             StudentManager.sharedInstance.creatingStudent?.entrepriseName = n
         }
         
-        if let s = StudentManager.sharedInstance.creatingStudent {
-            RealmManager.sharedInstance.store(s:RealmManager.sharedInstance.fillStringWith(student:s ))
-        }
-        
+               
         
     }
     

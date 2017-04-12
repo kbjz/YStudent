@@ -36,7 +36,18 @@ class EventCell: UITableViewCell {
         self.cursusBt.layer.cornerRadius = 8.0
         // Initialization code
     }
+    deinit
+    {
+        ignoreFrameChanges()
+    }
     
+    
+    func ignoreFrameChanges() {
+        
+        removeObserver(self, forKeyPath: "frame")
+        
+        
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

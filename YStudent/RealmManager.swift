@@ -14,14 +14,14 @@ class RealmManager: NSObject {
     // singleton
     static let sharedInstance = RealmManager()
     
-    let realm = try? Realm()
+    let realm = try! Realm()
     
     //store a Student
     func store(s:Student) {
-        if let r = self.realm {
-            try! r.write {
-                r.add(s)
-            }
+       // if let r = self.realm {
+            try! realm.write {
+                realm.add(s)
+         //   }
         }
         
     }
@@ -40,7 +40,7 @@ class RealmManager: NSObject {
     
     // get LIst of student
     func getListOfStudents() -> Results<Student>{
-        return self.realm!.objects(Student.self)
+        return self.realm.objects(Student.self)
     }
 
 }

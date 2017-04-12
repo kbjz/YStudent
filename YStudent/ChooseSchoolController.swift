@@ -18,22 +18,22 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
     
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        navigationController?.navigationBar.barTintColor = UIColor.ynovGreen
+        navigationController?.navigationBar.barTintColor = UIColor.ynovPink
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,NSFontAttributeName:UIFont(name:"HelveticaNeue-Light",size:30) as Any]
         
     }
     
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialize()
+       
         
     }
     
     func initialize() {
         self.nextStepBt.isHidden = true
         self.nextStepBt.isUserInteractionEnabled = false
-        
         self.nextStepBt.layer.cornerRadius = 8.0
         self.nextStepBt.layer.backgroundColor = UIColor.ynovPink.cgColor
         self.collectionView.delegate = self

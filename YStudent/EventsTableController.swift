@@ -20,17 +20,19 @@ class EventsTableController: UIViewController,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var eventsTableView: UITableView!
     var eventState = EventState.toAdd
     
-    override func handleLongTap(sender: UILongPressGestureRecognizer?) {
-        NotificationCenter.default.removeObserver(self,
-                                                            name: NSNotification.Name.UIContentSizeCategoryDidChange,
-                                                            object: nil)
-    self.navigationController?.popToRootViewController(animated: false)
-        
-        
+    override func viewWillDisappear(_ animated: Bool) {
+        if let table = self.eventsTableView.gestureRecognizers {
+            for obj in table {
+                obj.isEnabled = false
+            }
+        }
+        //if let obs = self.eventsTableView.observationInfo
+       
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.addGestureToChangeUser()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +46,7 @@ class EventsTableController: UIViewController,UITableViewDelegate,UITableViewDat
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let d = "25/12/2017"
         guard let date = dateFormatter.date(from: d) else {return}
-        let e = Event(location: "paris 12", reason: "Session d'immersion", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.toulouse,Campus.bordeaux,Campus.paris,Campus.lyon], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
+        let e = Event(location: "Paris 12", reason: "Session d'immersion", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.toulouse,Campus.bordeaux,Campus.paris,Campus.lyon], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
         EventManager.sharedInstance.addEvent(e: e)
         let e1 = Event(location: "Aix en provence ", reason: "Salon de l'etudiant", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.bordeaux], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
         EventManager.sharedInstance.addEvent(e: e1)
