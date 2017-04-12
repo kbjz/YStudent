@@ -12,6 +12,9 @@ class StudentManager: NSObject {
 
     static let sharedInstance = StudentManager()
     
+    
+    var selectedActualSchool : ActualCourse?
+    
     var listOfStudents = {
         RealmManager.sharedInstance.getListOfStudents()
     }
@@ -30,6 +33,8 @@ class StudentManager: NSObject {
     var selectedLevel : LevelWanted?
     var selectedProgram : ProgramWanted?
     let yesNo = ["OUI","NON"]
+    
+    let actualCourse = [ActualCourse.ingenieur.rawValue,ActualCourse.commerce.rawValue,ActualCourse.lycee.rawValue,ActualCourse.lycee.rawValue,ActualCourse.prepa.rawValue,ActualCourse.universite.rawValue,ActualCourse.autre.rawValue]
     
     var hasEntreprise : Bool?
     var contractSelected : Contract?

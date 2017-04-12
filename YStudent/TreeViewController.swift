@@ -14,7 +14,7 @@ class TreeViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.ynovPink
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,NSFontAttributeName:UIFont(name:"HelveticaNeue-Light",size:30) as Any]
     }
-
+    
     enum CreationState {
         case toCreate
         case onCreation
@@ -35,7 +35,16 @@ class TreeViewController: UIViewController {
     
     @IBAction func changeModeTapped(_ sender: Any) {
         if self.state == .onCreation {
-            self.view.makeToast(<#T##message: String##String#>, duration: <#T##TimeInterval#>, position: <#T##CGPoint#>)
+            let alert = UIAlertController(title: "Informations", message: "Un prospect est en cours de création , etes vous sur de vouloir changer de mode", preferredStyle: .alert)
+            let bt = UIAlertAction(title: "Oui", style: .default, handler: { _ in
+                self.performSegue(withIdentifier: "unwindToInitial", sender: self)
+            })
+            let btCancel = UIAlertAction(title: "Non", style: .cancel, handler: nil)
+            alert.addAction(bt)
+            alert.addAction(btCancel)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+             self.performSegue(withIdentifier: "unwindToInitial", sender: self)
         }
     }
     
@@ -61,19 +70,55 @@ class TreeViewController: UIViewController {
     
     @IBAction func createTapped(_ sender: Any) {
         if self.state == .onCreation {
-            if let s = StudentManager.sharedInstance.creatingStudent {
-                RealmManager.sharedInstance.store(s:RealmManager.sharedInstance.fillStringWith(student:s ))
-                StudentManager.sharedInstance.creatingStudent = nil
-            }
+            let alert = UIAlertController(title: "Informations", message: "Etes vous sur de vouloir sauvegarder le nouveau prospect ?", preferredStyle: .alert)
+            let bt = UIAlertAction(title: "Oui", style: .default, handler: { _ in
+                if let s = StudentManager.sharedInstance.creatingStudent {
+                    if let e = EventManager.sharedInstance.selectedEvent {
+                        s.event = e.reason
+                    }
+                   
+                    RealmManager.sharedInstance.store(s:RealmManager.sharedInstance.fillStringWith(student:s ))
+                    StudentManager.sharedInstance.creatingStudent = nil
+                    
+                }
+                self.createProspect.setTitle("Créer un prospect", for: .normal)
+                UIView.animate(withDuration: 1.5) {
+                    self.civilityBt.alpha = 0
+                    self.actualCursus.alpha = 0
+                    self.cursusChoiceBt.alpha = 0
+                    self.enterpriseBt.alpha = 0
+                    self.civilityBt.isUserInteractionEnabled = false
+                    self.actualCursus.isUserInteractionEnabled = false
+                    self.cursusChoiceBt.isUserInteractionEnabled = false
+                    self.enterpriseBt.isUserInteractionEnabled = false
+                    
+                }
 
-            self.state = .toCreate
+                
+                self.state = .toCreate
+            })
+            let btCancel = UIAlertAction(title: "Non", style: .cancel, handler: { _ in
+                self.createProspect.setTitle("Sauvegarder prospect", for: .normal)
+                UIView.animate(withDuration: 1.5) {
+                    self.civilityBt.alpha = 1.0
+                    self.actualCursus.alpha = 1.0
+                    self.cursusChoiceBt.alpha = 1.0
+                    self.enterpriseBt.alpha = 1.0
+                    self.civilityBt.isUserInteractionEnabled = true
+                    self.actualCursus.isUserInteractionEnabled = true
+                    self.cursusChoiceBt.isUserInteractionEnabled = true
+                    self.enterpriseBt.isUserInteractionEnabled = true
+                }
+
+                
+            })
+            alert.addAction(bt)
+            alert.addAction(btCancel)
+            self.present(alert, animated: true, completion: nil)
+         
         } else {
             self.state = .onCreation
-        }
-        
-        switch self.state {
-        case .onCreation:
-             self.createProspect.setTitle("Sauvegarder prospect", for: .normal)
+            self.createProspect.setTitle("Sauvegarder prospect", for: .normal)
             UIView.animate(withDuration: 1.5) {
                 self.civilityBt.alpha = 1.0
                 self.actualCursus.alpha = 1.0
@@ -84,22 +129,10 @@ class TreeViewController: UIViewController {
                 self.cursusChoiceBt.isUserInteractionEnabled = true
                 self.enterpriseBt.isUserInteractionEnabled = true
             }
-        case .toCreate:
-             self.createProspect.setTitle("Créer un prospect", for: .normal)
-            UIView.animate(withDuration: 1.5) {
-                self.civilityBt.alpha = 0
-                self.actualCursus.alpha = 0
-                self.cursusChoiceBt.alpha = 0
-                self.enterpriseBt.alpha = 0
-                self.civilityBt.isUserInteractionEnabled = false
-                self.actualCursus.isUserInteractionEnabled = false
-                self.cursusChoiceBt.isUserInteractionEnabled = false
-                self.enterpriseBt.isUserInteractionEnabled = false
-                
-            }
-            
+
         }
-    }
+        
+            }
     // unwind
     @IBAction func prepareForUnwind(_ sender: UIStoryboardSegue) {
         // unwind from adding event

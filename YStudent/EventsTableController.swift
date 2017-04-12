@@ -21,27 +21,17 @@ class EventsTableController: UIViewController,UITableViewDelegate,UITableViewDat
     var eventState = EventState.toAdd
     
     override func viewWillDisappear(_ animated: Bool) {
-        if let table = self.eventsTableView.gestureRecognizers {
-            for obj in table {
-                obj.isEnabled = false
-            }
-        }
-        //if let obs = self.eventsTableView.observationInfo
-       
-
+     
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
-    
+  
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = UIColor.ynovGreen
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,NSFontAttributeName:UIFont(name:"HelveticaNeue-Light",size:30) as Any]
         self.eventsTableView.reloadData()
     }
     func initialize() {
-        
+        self.eventsTableView.allowsMultipleSelection = false
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let d = "25/12/2017"
@@ -50,7 +40,7 @@ class EventsTableController: UIViewController,UITableViewDelegate,UITableViewDat
         EventManager.sharedInstance.addEvent(e: e)
         let e1 = Event(location: "Aix en provence ", reason: "Salon de l'etudiant", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.bordeaux], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
         EventManager.sharedInstance.addEvent(e: e1)
-        let e2 = Event(location: "paris 20", reason:"Portes ouvertes", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.paris], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
+        let e2 = Event(location: "Paris 20", reason:"Portes ouvertes", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.paris], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
         EventManager.sharedInstance.addEvent(e: e2)
         eventsTableView.register(UINib(nibName: "EventCell", bundle: nil), forCellReuseIdentifier: "eventCell")
         
@@ -84,6 +74,26 @@ class EventsTableController: UIViewController,UITableViewDelegate,UITableViewDat
         }
  */
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = self.eventsTableView.cellForRow(at: indexPath)
+        cell?.layer.backgroundColor = UIColor.ynovGreen.cgColor
+        EventManager.sharedInstance.selectedEvent = EventManager.sharedInstance.listOfEvents[indexPath.section]
+        self.view.makeToast("\(EventManager.sharedInstance.listOfEvents[indexPath.section].reason) est sélectionné", duration: 2.0, position: .top)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = self.eventsTableView.cellForRow(at: indexPath)
+        cell?.layer.backgroundColor = UIColor.clear.cgColor
+        EventManager.sharedInstance.selectedEvent = nil
+         self.view.makeToast("Pas d'évenements en cours", duration: 2.0, position: .top)
+    }
+    
+    
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -136,10 +146,7 @@ class EventsTableController: UIViewController,UITableViewDelegate,UITableViewDat
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
+   
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
         headerView.backgroundColor = FlatWhite()

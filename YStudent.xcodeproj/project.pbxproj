@@ -39,6 +39,7 @@
 		0AA2E1F51E5453F300061516 /* SkyFloatingLabelTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA2E1F41E5453F300061516 /* SkyFloatingLabelTextField.framework */; };
 		0AA2E1F71E54578A00061516 /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA2E1F61E54578A00061516 /* TextFieldEffects.framework */; };
 		0AA2E1F91E545B4D00061516 /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2E1F81E545B4D00061516 /* AddEventController.swift */; };
+		0AA37DDA1E9E4E88002B3469 /* ActualCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37DD91E9E4E88002B3469 /* ActualCourseController.swift */; };
 		0AA5691E1E5494A300DF7590 /* CampusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA5691D1E5494A300DF7590 /* CampusCell.xib */; };
 		0AA569201E54952700DF7590 /* CampusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5691F1E54952700DF7590 /* CampusCell.swift */; };
 		0AA5ACF51E44BAB7009F5825 /* ChooseUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5ACF41E44BAB7009F5825 /* ChooseUserController.swift */; };
@@ -108,6 +109,7 @@
 		0AA2E1F41E5453F300061516 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyFloatingLabelTextField.framework; path = Carthage/Build/iOS/SkyFloatingLabelTextField.framework; sourceTree = "<group>"; };
 		0AA2E1F61E54578A00061516 /* TextFieldEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextFieldEffects.framework; path = Carthage/Build/iOS/TextFieldEffects.framework; sourceTree = "<group>"; };
 		0AA2E1F81E545B4D00061516 /* AddEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventController.swift; sourceTree = "<group>"; };
+		0AA37DD91E9E4E88002B3469 /* ActualCourseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualCourseController.swift; sourceTree = "<group>"; };
 		0AA5691D1E5494A300DF7590 /* CampusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CampusCell.xib; sourceTree = "<group>"; };
 		0AA5691F1E54952700DF7590 /* CampusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusCell.swift; sourceTree = "<group>"; };
 		0AA5ACF41E44BAB7009F5825 /* ChooseUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUserController.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				0A5022381E7C7F7500745D9C /* TreeViewController.swift */,
 				0A08BA3F1E9796D8003A0506 /* ChooseSchoolController.swift */,
 				0A9585501E9A5BA9009859CC /* EntrepriseController.swift */,
+				0AA37DD91E9E4E88002B3469 /* ActualCourseController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				0A686A341E670503009841BB /* StudentCell.swift in Sources */,
 				0AA569201E54952700DF7590 /* CampusCell.swift in Sources */,
 				0AB91E221E5F257A004126F5 /* EventsTableController.swift in Sources */,
+				0AA37DDA1E9E4E88002B3469 /* ActualCourseController.swift in Sources */,
 				0AA5ACF51E44BAB7009F5825 /* ChooseUserController.swift in Sources */,
 				0A84F4FE1E449A6900E1AE36 /* AppDelegate.swift in Sources */,
 				0A957E021E474EE900AE4A97 /* EventCell.swift in Sources */,

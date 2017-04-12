@@ -49,18 +49,30 @@ class EntrepriseController: UIViewController {
     
     
     @IBAction func nextStepTapped(_ sender: Any) {
-        if let e = StudentManager.sharedInstance.hasEntreprise {
-            StudentManager.sharedInstance.creatingStudent?.isAlreadyInContract = e
+        
+        if StudentManager.sharedInstance.creatingStudent != nil {
+            if let e = StudentManager.sharedInstance.hasEntreprise {
+                StudentManager.sharedInstance.creatingStudent?.isAlreadyInContract = e
+            }
+            
+            StudentManager.sharedInstance.creatingStudent?.contractType = StudentManager.sharedInstance.contractSelected
+            
+            if let n = StudentManager.sharedInstance.entrepriseName {
+                StudentManager.sharedInstance.creatingStudent?.entrepriseName = n
+            }
+            
+        } else {
+            let u = Student()
+            if let e = StudentManager.sharedInstance.hasEntreprise {
+               u.isAlreadyInContract = e
+            }
+            u.contractType = StudentManager.sharedInstance.contractSelected
+            if let n = StudentManager.sharedInstance.entrepriseName {
+                u.entrepriseName = n
+            }
+            StudentManager.sharedInstance.creatingStudent = u
         }
-        
-        StudentManager.sharedInstance.creatingStudent?.contractType = StudentManager.sharedInstance.contractSelected
-        
-        if let n = StudentManager.sharedInstance.entrepriseName {
-            StudentManager.sharedInstance.creatingStudent?.entrepriseName = n
-        }
-        
-               
-        
+       
     }
     
     

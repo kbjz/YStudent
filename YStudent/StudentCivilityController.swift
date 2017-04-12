@@ -157,19 +157,33 @@ class StudentCivilityController: UIViewController ,UITextFieldDelegate, UIImageP
         guard let postalCode = self.postalCode.text else {return}
         guard let city = self.cityTf.text else {return}
         
-        //création User
-        let user = Student()
-        user.firstName = fn
-        user.lastName = ln
-        user.birthdate = date
-        user.mail = mail
-        user.phone = phone
-        user.address = addr
-        user.city = city
-        user.postalCode = postalCode
         
-        // store in manager
-        StudentManager.sharedInstance.creatingStudent = user
+        if let user = StudentManager.sharedInstance.creatingStudent {
+            user.firstName = fn
+            user.lastName = ln
+            user.birthdate = date
+            user.mail = mail
+            user.phone = phone
+            user.address = addr
+            user.city = city
+            user.postalCode = postalCode
+        } else {
+            //création User
+            let user = Student()
+            user.firstName = fn
+            user.lastName = ln
+            user.birthdate = date
+            user.mail = mail
+            user.phone = phone
+            user.address = addr
+            user.city = city
+            user.postalCode = postalCode
+            
+            // store in manager
+            StudentManager.sharedInstance.creatingStudent = user
+        }
+        
+     
         
         // store in realm 
         //RealmManager.sharedInstance.store(s:user)

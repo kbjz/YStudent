@@ -31,10 +31,13 @@ class RealmManager: NSObject {
         guard let s = student.schoolWanted else {return student}
         guard let l = student.levelWanted else {return student}
         guard let p = student.programWanted else {return student}
+        guard let school = student.actualSchool else {return student}
         student.cursusWantedString = c.rawValue
         student.schoolWantedString = s.rawValue
         student.levelWantedString = l.rawValue
         student.programWantedString = p.rawValue
+        student.actualSchoolString = school.rawValue
+        
         return student
     }
     

@@ -309,11 +309,18 @@ class ChooseSchoolController: UIViewController,UICollectionViewDelegate,UICollec
     
     @IBAction func nextStepTapped(_ sender: Any) {
         // update creating User
-        StudentManager.sharedInstance.creatingStudent?.cursusWanted = StudentManager.sharedInstance.selectedSchool
-        StudentManager.sharedInstance.creatingStudent?.levelWanted = StudentManager.sharedInstance.selectedLevel
-        StudentManager.sharedInstance.creatingStudent?.programWanted = StudentManager.sharedInstance.selectedProgram
-        // save Realm
-        
+        if StudentManager.sharedInstance.creatingStudent != nil {
+            StudentManager.sharedInstance.creatingStudent?.cursusWanted = StudentManager.sharedInstance.selectedSchool
+            StudentManager.sharedInstance.creatingStudent?.levelWanted = StudentManager.sharedInstance.selectedLevel
+            StudentManager.sharedInstance.creatingStudent?.programWanted = StudentManager.sharedInstance.selectedProgram
+        } else {
+            let user = Student()
+            user.cursusWanted = StudentManager.sharedInstance.selectedSchool
+            user.levelWanted = StudentManager.sharedInstance.selectedLevel
+            user.programWanted = StudentManager.sharedInstance.selectedProgram
+            StudentManager.sharedInstance.creatingStudent = user
+        }
+             
     }
     
 }

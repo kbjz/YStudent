@@ -52,7 +52,7 @@ class StudentListController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.lastNameLb.text = model.lastName
         cell.mailLb.text = model.mail
         cell.phoneLb.text = String(model.phone)
-        cell.actualLevelLb.text = model.actualSchool
+        cell.actualLevelLb.text = model.actualSchool?.rawValue
         //cell.cursusAskedLb.text = model.cursusWanted.rawValue
         return cell
     }

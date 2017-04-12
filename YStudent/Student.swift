@@ -48,6 +48,15 @@ enum ProgramWanted : String {
     case alternance
 }
 
+enum ActualCourse : String  {
+    case commerce = "Ecole de commerce"
+    case lycee = "Lycée"
+    case prepa = "Classe préparatoire"
+    case universite = "Université"
+    case ingenieur = "Ecole d'ingenieur"
+    case autre = "Autre"
+    
+}
 
 
 @objc enum SocialNetwork: Int {
@@ -59,12 +68,14 @@ enum ProgramWanted : String {
 class Student : Object {
     
     // realm object
+    
     dynamic var lastName : String   = "Doe"
     dynamic var firstName : String  = "John"
     dynamic var birthdate : Date    = Date()
     dynamic var city :String?
     dynamic var postalCode : String?
     dynamic var isAlreadyInContract : Bool = false
+    var actualSchool : ActualCourse?
     var contractType : Contract?
     dynamic var entrepriseName = ""
     //var gender : Gender
@@ -72,11 +83,13 @@ class Student : Object {
     dynamic var address : String    = "12 rue doe"
     dynamic var phone : Int         = 0676456345
     dynamic var picture : String    = "url/picture"
-    dynamic var actualSchool : String = "baccaluareat"
+    //dynamic var actualSchool : String = "baccaluareat"
     var cursusWanted : Cursus?
     var schoolWanted : Campus?
     var levelWanted : LevelWanted?
     var programWanted : ProgramWanted?
+    dynamic var actualSchoolName = ""
+    dynamic var event : String?
     dynamic var experience : String = " 3 stages "
     dynamic var cv : String = "url"
     dynamic var beginningDate : Date = Date()
@@ -86,6 +99,7 @@ class Student : Object {
     dynamic var levelWantedString = ""
     dynamic var schoolWantedString = ""
     dynamic var programWantedString = ""
+    dynamic var actualSchoolString = ""
     // TO DO
     // parentsName
     // parentPhone
@@ -96,19 +110,19 @@ class Student : Object {
         
         //realm
         
-        self.lastName = "Doe"
-        self.firstName = "John"
+        self.lastName = ""
+        self.firstName = ""
         self.birthdate = Date()
         //self.gender = Gender.null
-        self.mail = "what.ever@whatever.com"
-        self.address = "whatever street"
-        self.phone = 11111111
-        self.picture = "/nopicture"
-        self.actualSchool = "IUT Whatever"
+        self.mail = ""
+        self.address = ""
+        self.phone = 0
+        self.picture = ""
+        //self.actualSchool = "IUT Whatever"
         self.cursusWanted = Cursus.null
         self.schoolWanted = Campus.null
-        self.experience = "lorem ipsum"
-        self.cv = "whatever.pdf"
+        self.experience = ""
+        self.cv = ""
         self.beginningDate = Date()
         //self.skill = ["What","Ever"]
         //self.socialAdresses = [SocialNetwork.linkedIn:"whatever.com"]
