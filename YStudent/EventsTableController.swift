@@ -35,13 +35,13 @@ class EventsTableController: UIViewController,UITableViewDelegate,UITableViewDat
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let d = "25/12/2017"
+        let d2 = "12/05/2017"
         guard let date = dateFormatter.date(from: d) else {return}
+         guard let date2 = dateFormatter.date(from: d2) else {return}
         let e = Event(location: "Paris 12", reason: "Session d'immersion", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.toulouse,Campus.bordeaux,Campus.paris,Campus.lyon], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
         EventManager.sharedInstance.addEvent(e: e)
-        let e1 = Event(location: "Aix en provence ", reason: "Salon de l'etudiant", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.bordeaux], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
+        let e1 = Event(location: "Aix en provence ", reason: "Salon de l'etudiant", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.bordeaux], begin: date2, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
         EventManager.sharedInstance.addEvent(e: e1)
-        let e2 = Event(location: "Paris 20", reason:"Portes ouvertes", cursus: [Cursus.ingesup,Cursus.isee] , campus: [Campus.aixEnProvence,Campus.paris], begin: date, duration: Duration.oneWeek, isYnov: YnovReason.ImmersiveSession)
-        EventManager.sharedInstance.addEvent(e: e2)
         eventsTableView.register(UINib(nibName: "EventCell", bundle: nil), forCellReuseIdentifier: "eventCell")
         
         self.eventsTableView.initializePullToRefresh(tint: UIColor.flatWhite, fill: UIColor.ynovGreen)
